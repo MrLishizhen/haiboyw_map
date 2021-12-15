@@ -1,0 +1,34 @@
+.item_wrapper {
+  .label {
+    color: #00c2ff;
+    font-size: 28px;
+    line-height: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .value {
+    position: relative;
+    height: 84px;
+    line-height: 84px;
+    & > div {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      &:first-child {
+          color: #FF8A0A;
+          font-size: 48px;
+          text-align: center;
+          z-index: 1;
+      }
+    }
+    .img {
+        background-image: url('./images/icon.png');
+        background-size: 100% 100%;
+        height: 84px;
+        margin: 0 auto;
+        width: 84px;
+    }
+  }
+}

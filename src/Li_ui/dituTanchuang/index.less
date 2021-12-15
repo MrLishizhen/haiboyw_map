@@ -1,0 +1,70 @@
+h3 {
+  padding: 0;
+  margin: 0;
+  //color:#fff;
+  //font-size:48px;
+}
+
+
+.web {
+  :global {
+
+
+    h3{
+      position:relative;
+      color:#fff;
+      font-size:48px;
+      padding-top:20px;
+      padding-bottom: 10px;
+    }
+    h3:after{
+      content:'';
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:50%;
+      height:6px;
+
+      background-color: #508299;
+    }
+    .model-item{
+      display:flex;
+      div{
+        width:50%;
+        padding-left:80px;
+        height:85px;
+        line-height:85px;
+        color:#fff;
+
+      }
+      .model-padd{
+        background-image:url(./img/wenduji.png);
+        background-repeat: no-repeat;
+        background-position:20px center;
+        display:flex;
+        &.yl{
+          background-image:url(./img/jiangyuliang.png);
+        }
+        &.fk{
+          background-image:url(./img/fengkuang.png);
+        }
+        &.sd{
+          background-image:url(./img/shidu.png);
+        }
+        &.njd{
+          background-image:url(./img/nengjiandu.png);
+        }
+        &.qy{
+          background-image:url(./img/qiya.png);
+        }
+        .left-title{
+          font-size:32px;
+        }
+        .left-cont{
+          font-size:48px;
+          color:#FDEE4F;
+        }
+      }
+    }
+  }
+}

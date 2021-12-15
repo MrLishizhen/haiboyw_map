@@ -1,0 +1,25 @@
+.basic_table {
+  width: 100%;
+  height: 100%;
+  font-size: 55px;
+//   font-weight: bolder;
+  & > tbody {
+    & > tr {
+      & > td {
+      }
+    }
+  }
+  .item {
+    & > div {
+      display: inline-block;
+      vertical-align: middle;
+      min-width: 220px;
+      &:first-child {
+          color: #5394D5;
+      }
+      &:last-child {
+        color: #A0CFFF;
+    }
+    }
+  }
+}

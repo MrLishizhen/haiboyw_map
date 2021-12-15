@@ -1,0 +1,3 @@
+const data = [{ "deviceName": "淞虹苑步道", "NAME": "淞虹苑步道1", "deviceId": "31010520001328066196", "device": "31010520001328066196", "upPicture": "", "icon": "1" }, { "deviceName": "淞虹苑步道", "NAME": "淞虹苑步道2", "deviceId": "31010520001328066198", "device": "31010520001328066198", "upPicture": "", "icon": "1" }, { "deviceName": "淞虹苑步道", "NAME": "淞虹苑步道3", "deviceId": "31010520001328066197", "device": "31010520001328066197", "upPicture": "", "icon": "1" }, { "deviceName": "淞虹苑步道", "NAME": "淞虹苑步道4", "deviceId": "31010520001328066199", "device": "31010520001328066199", "upPicture": "", "icon": "1" }, { "page": 1, "rows": [], "searchFilter": [], "size": 9999, "total": 0 }];
+
+export default data;

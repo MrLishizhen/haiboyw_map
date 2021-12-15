@@ -1,0 +1,122 @@
+.agentbar {
+	font-size: 12px;
+	font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ";
+}
+
+.agentbar .btn {
+	font-size: 12px;
+}
+
+.agentbar .form-control {
+	font-size: 12px;
+	height: 31px;
+}
+
+.agentbar .form-control-feedback {
+	font-size: 12px;
+	line-height: 31px;
+	height: 31px;
+	width: 31px;
+}
+
+.agentbar #txtNumber {
+	width: 130px;
+}
+
+.agentbar #txtStatus {
+	width: 90px;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	padding-right: 10px;
+}
+
+.agentbar .dropdown-menu {
+	width: 90px;
+	min-width: 90px;
+}
+
+.agentbar .dropdown-menu a {
+	font-size: 12px;
+}
+
+.agentbar .dropdown-toggle {
+	cursor: pointer;
+}
+
+.agentbar #txtDuration {
+	width: 80px;
+	color: #d9534f;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: white;
+	border-left: 0;
+}
+
+.agentbar #btnLogin, .agentbar #btnReady, .agentbar #btnNotReady,
+.agentbar .otherwork, .agentbar #btnLogout {
+	padding: 3px 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.agentbar #btnLogin, .agentbar #btnLogin:hover, .agentbar #btnLogin:focus,
+.agentbar #btnReady, .agentbar #btnReady:hover, .agentbar #btnReady:focus {
+	color: green;
+}
+
+.agentbar .otherwork, .agentbar .otherwork:hover, .agentbar .otherwork:focus {
+	color: #d9534f;
+}
+
+.agentbar #btnNotReady, .agentbar #btnNotReady:hover, .agentbar #btnNotReady:focus,
+.agentbar #btnLogout, .agentbar #btnLogout:hover, .agentbar #btnLogout:focus {
+	color: #d9534f;
+}
+
+.agentbar .popover {
+	font-family: "Microsoft YaHei", "Î¢ÈíÑÅºÚ";
+}
+
+.agentbar .panel-consult {
+	width: 272px;
+	max-width: 272px;
+}
+
+.agentbar .panel-consult #txtType {
+	width: 70px;
+	font-size: 12px;
+	padding-right: 10px;
+}
+
+.agentbar .panel-consult .dropdown-menu {
+	width: 70px;
+	min-width: 70px;
+}
+
+.agentbar .panel-consult .dropdown-menu>li>a {
+	padding: 3px 12px;
+	cursor: pointer;
+}
+
+.agentbar .panel-consult #txtDesc {
+	width: 120px;
+	font-size: 12px;
+	border-left: 0;
+}
+
+.agentbar .panel-dial {
+	width: 100px;
+}
+
+.agentbar .panel-dial .btn-toolbar {
+	margin-bottom: 5px;
+}
+
+.agentbar .panel-dial .btn-dial {
+	width: 30px;
+}
+
+.agentbar .panel-dial .btn-close {
+	width: 100px;
+}

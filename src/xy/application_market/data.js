@@ -1,0 +1,101 @@
+const data = [
+    {
+        "id": 1,
+        "name": "智慧园区",
+        "desc": "点击可查看智慧园区",
+        "unit": "襄城经济开发区",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "http://183.134.104.242:8222",
+        "seq": 1,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 3,
+        "name": "智慧党建",
+        "desc": "点击可查看智慧党建",
+        "unit": "区组织部",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "http://183.134.104.242:8188/party/1/1",
+        "seq": 3,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 4,
+        "name": "智慧旅游",
+        "desc": "点击可查看智慧旅游",
+        "unit": "区文旅局",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "",
+        "seq": 4,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 5,
+        "name": "智慧菜场",
+        "desc": "点击可查看智慧菜场",
+        "unit": "区商务局",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "https://zjhzcc.xscitydo.com/?marketCode=b8123akj1j3k12j3ebeeb1d5e5abd3b8",
+        "seq": 5,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 6,
+        "name": "智慧校园",
+        "desc": "点击可查看智慧校园",
+        "unit": "区教育局",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "https://www.ss360.org/",
+        "seq": 6,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 7,
+        "name": "政务服务",
+        "desc": "点击可查看政务服务",
+        "unit": "区行政审批局",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "http://192.167.16.163:8888/csg/szxc/analysis.html",
+        "seq": 7,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    },
+    {
+        "id": 2,
+        "name": "智慧小区",
+        "desc": "点击可查看智慧小区",
+        "icon_style": "",
+        "icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "active_icon": "/fastdfs/group1/M00/00/12/CgAAaWE5-5WAIpZeAAASh9A9Eqk328.png",
+        "url": "",
+        "seq": 2,
+        "popup": "open",
+        "slideSize": 6,
+        "area": "襄城区"
+    }
+];
+
+export default data;

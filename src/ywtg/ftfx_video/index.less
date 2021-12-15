@@ -1,0 +1,273 @@
+// 下拉框
+.category_box {
+  :global {
+    .ant-select-dropdown {
+      background-color: transparent;
+    }
+    .ant-pagination-simple-pager {
+      color: #cccccc;
+    }
+    .ant-pagination-simple .ant-pagination-simple-pager input {
+      background-color: rgba(0, 0, 0, 0.4);
+      border: none;
+    }
+    .ant-select-selection {
+      position: relative;
+      color: #cccccc;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    .ant-select-selection::after {
+      top: 50%;
+      right: 15%;
+      position: absolute;
+      content: " ";
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-top: 1px solid #cccccc;
+      border-right: 1px solid #cccccc;
+      transform: rotate(135deg) translate(-100%, 0);
+    }
+    .ant-select-selection--single {
+      padding-top: 25px;
+      height: 80px;
+      width: 300px;
+      font-size: 1.7em;
+    }
+    .ant-select-selection__placeholder,
+    .ant-select-search__field__placeholder {
+      font-size: 34px;
+      position: absolute;
+      right: 9px;
+      left: 0;
+      max-width: 100%;
+      margin-top: -10px;
+      overflow: hidden;
+      color: #bfbfbf;
+      white-space: nowrap;
+      text-align: left;
+      text-overflow: ellipsis;
+      top: 10px;
+      height: 100%;
+      line-height: inherit;
+    }
+  }
+}
+
+.dropdown_select {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+.select_option {
+  font-size: 1.7em;
+  height: 64px;
+  padding-top: 18px !important;
+  // color: #cccccc !important;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.select_option:hover {
+  background-color: rgba(17, 41, 72, 0.5);
+}
+// 分页
+.pagination {
+  padding: 10px;
+  font-size: 1.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #cccccc;
+  background-color: rgba(0, 0, 0, 0.5);
+  .prev {
+    cursor: pointer;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-top: 2px solid #cccccc;
+    border-left: 2px solid #cccccc;
+    transform: rotate(-45deg);
+    margin-right: 1.4em;
+  }
+  .line {
+    margin: 0 0.6em;
+  }
+  .next {
+    cursor: pointer;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-top: 2px solid #cccccc;
+    border-right: 2px solid #cccccc;
+    transform: rotate(45deg);
+    margin-left: 1.4em;
+  }
+}
+
+// 视频
+:global(.vjs-loading-spinner) {
+  display: none !important;
+}
+
+// 抽屉
+.preplan_wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  * {
+    color: #ccc !important;
+  }
+  :global {
+    .ant-tree li {
+      padding: 16px 0;
+    }
+    .ant-tree li span.ant-tree-switcher {
+      height: 72px;
+      line-height: 72px;
+      margin-right: 16px;
+      width: 48px;
+    }
+    .ant-tree li .ant-tree-node-content-wrapper {
+      height: 72px;
+      line-height: 72px;
+    }
+    .ant-tree li .ant-tree-node-content-wrapper:hover {
+        background-color: transparent !important;
+        color: #1890ff !important;
+        text-decoration: underline;
+        &>span {
+            color: #1890ff !important;
+        }
+    }
+
+    .ant-drawer-mask {
+      position: absolute;
+    }
+    .ant-drawer-content-wrapper {
+      position: absolute;
+    }
+    .ant-drawer-title {
+      font-size: 48px;
+      line-height: 1.5;
+    }
+    .ant-drawer-close {
+      font-size: 48px;
+      line-height: 1;
+      top: 24px;
+    }
+    .ant-drawer-content {
+      background-color: transparent;
+    }
+    .ant-drawer-header {
+      font-size: 1.2em;
+      background-color: rgba(19, 45, 90, 0.7);
+    }
+    .ant-drawer-body {
+      background-color: rgba(19, 45, 90, 0.7);
+    }
+    .ant-list-item-meta-title {
+      font-size: 24px;
+    }
+    .ant-list-item-meta-description {
+      font-size: 22px;
+    }
+    .ant-drawer-body * {
+      font-size: 48px;
+    }
+  }
+  // *{
+  //     color: #CCCCCC !important;
+  //     font-size: 1.1em;
+
+  // }
+}
+
+:global(.ant-list-item-meta-title) {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+// 预案组合
+.preplan_group {
+  display: flex;
+  height: 100%;
+  :global {
+    .ant-list-item-meta-title {
+      margin-bottom: 0.7em;
+    }
+
+    .ant-list-item {
+      margin-bottom: 0.4em;
+    }
+  }
+  .preplan_tree {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
+  }
+  .preplan_view {
+    flex: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      margin-bottom: 40px;
+    }
+    .preplan_video {
+      width: 96%;
+      height: 564px;
+      text-align: center;
+    }
+  }
+}
+
+// tree
+
+// input
+.graph_hull {
+  width: 720px;
+  height: 96px;
+  position: relative;
+}
+.graph_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 720px;
+  height: 96px;
+  background: rgba(87, 150, 255, 0.1);
+  border-radius: 48px;
+  border: 1px solid rgba(68, 138, 255, 0.4);
+  font-size: 32px;
+  font-family: MicrosoftYaHei;
+  color: #79abff;
+  line-height: 42px;
+  padding-left: 68px;
+  box-sizing: border-box;
+}
+.graph_input:focus {
+  outline: none;
+}
+.graph_img {
+  position: absolute;
+  top: 50%;
+  right: 6%;
+  transform: translate(0, -50%);
+}
+.graph_img img {
+  width: 58px;
+  height: 58px;
+}
+
+.choudiCss {
+  :global {
+    .ant-drawer-header {
+      padding: 24px 24px;
+    }
+    .src-cnzj-FTFX_VIdeo-index__preplan_wrapper--KoxUV .ant-drawer-body * {
+      font-size: 27px;
+    }
+    .ant-drawer-close {
+      font-size: 30px;
+    }
+  }
+}

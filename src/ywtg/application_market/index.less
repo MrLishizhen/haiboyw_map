@@ -1,0 +1,45 @@
+.ywtg_application_market_slide_item {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  width: 240px;
+  height: 220px;
+  background-image: url("./images/bg.svg");
+  background-size: 100% 100%;
+  position: relative;
+  & > div {
+    color: #00beff;
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 50px;
+    margin: 0 24px 24px;
+    text-align: center;
+  }
+  .disabled {
+    position: absolute;
+    top: 0;
+    left: -24px;
+    width: 240px;
+    height: 220px;
+    background-image: url("./images/bg_disabled.png");
+    background-size: 100% 100%;
+  }
+  .icon {
+    background-size: 100% 100%;
+    position: absolute;
+    top: 45px;
+    left: 70px;
+    width: 100px;
+    height: 100px;
+  }
+  .name {
+    margin-top: 122px;
+  }
+}
+
+.ywtg_application_market_slide_item.hover {
+  background-image: url("./images/bg_active.svg");
+  & > div {
+    color: #fff;
+  }
+}

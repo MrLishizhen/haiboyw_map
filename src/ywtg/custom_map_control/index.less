@@ -1,0 +1,65 @@
+.ywtg_map_control_basic_wrapper {
+  & > div {
+    background: rgba(0, 160, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    width: 128px;
+    height: 128px;
+    position: relative;
+    margin: 10px 0;
+  }
+  & > div + div {
+    margin-left: 48px !important;
+  }
+  .active {
+    background-image: url("./images/bg_active.svg");
+    background-size: 100% 100%;
+    width: 148px;
+    height: 148px;
+    margin: 0;
+  }
+  .icon {
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .label {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    line-height: 2;
+  }
+}
+
+.icon_cnBorder,
+.icon_cnCountry {
+  background-image: url("./images/cnBorder.png");
+}
+
+.icon_road {
+  background-image: url("./images/road.svg");
+}
+
+.icon_buildingFFF {
+  background-image: url("./images/buildingFFF.svg");
+}
+
+.icon_buildingReal {
+  background-image: url("./images/buildingReal.svg");
+}
+
+.icon_cameraMaptile {
+  background-image: url("./images/cameraMaptile.svg");
+}
+
+.icon_CAMERAROTATE {
+  background-image: url("./images/CAMERAROTATE.svg");
+}

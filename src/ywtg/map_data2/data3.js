@@ -1,0 +1,4 @@
+const data = [{"type":"flash","sbbh":"","name":"","state":"auto","address":"","X":"","Y":"","icon":"","pinType":"xfyj","popup":"click2","szms1":"","sz1":"","szms2":"","sz2":"","szms3":"","sz3":"","szms4":"","sz4":""},{"type":"消防警情","sbbh":"59dd386fb020434ea207931d50faea9c","name":"抢险救援","state":"长宁区 新泾三村52号205室","address":"长宁区 新泾三村52号205室","X":"-10131.358958378645","Y":"-1768.1861709142963","icon":"http://bigdata.cn.gov:8070/fastdfs/group1/M00/09/E5/wKgJx1_pncaAW9_7AAASknzNazQ369.png","pinType":"xfyj","popup":"click2","szms1":"处置对象","sz1":"人员被困","szms2":"案件状态","sz2":"返队","szms3":"案件性质","sz3":"实警","szms4":"立案时间","sz4":"2021-03-17 04:03:40"}];
+
+
+export default data;

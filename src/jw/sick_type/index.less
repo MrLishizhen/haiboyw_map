@@ -1,0 +1,42 @@
+.item {
+  //   background: linear-gradient(
+  //     90deg,
+  //     rgba(5, 91, 169, 0) 0%,
+  //     rgba(5, 91, 169, 1) 100%
+  //   );
+  background-image: url("./image/bg.png");
+  background-size: 100% 100%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 248px;
+  .name {
+    color: #00c2ff;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25px;
+    padding-top: 9px;
+  }
+  .value {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 34px;
+  }
+}
+
+.item:hover,
+.item.active {
+  background-image: url("./image/bg-active.png");
+  background-size: 100% 100%;
+  //   background: linear-gradient(
+  //     90deg,
+  //     rgba(0, 255, 254, 0) 0%,
+  //     rgba(0, 255, 254, 1) 100%
+  //   );
+  min-height: 82px;
+  margin-bottom: 6px;
+  .name {
+    color: #00fffe;
+  }
+}

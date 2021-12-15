@@ -1,0 +1,33 @@
+.temperatureBox{
+  display:flex;
+  line-height:120px;
+  align-items:center;
+  :global {
+    .temperature{
+      color:#fff;
+      font-size:72px;
+      margin-right:11px;
+    }
+
+    .temperature-right{
+      display:flex;
+      flex-direction: column;
+      &>i{
+        font-style: normal;
+        color:#fff;
+      }
+      .temperatureMark{
+        font-size:24px;
+        line-height:24px;
+      }
+      .temperatureTitle{
+        font-size:36px;
+        line-height:36px;
+        width:200px;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+}

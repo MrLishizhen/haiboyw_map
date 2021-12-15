@@ -1,0 +1,35 @@
+.fxyj_icon_wrapper {
+  height: 100%;
+  & > div {
+    display: inline-block;
+    vertical-align: top;
+    height: 100%;
+  }
+  .img {
+    background-image: url("./images/normal.png");
+    background-size: 100% 100%;
+    -webkit-animation: spin 3s linear 3s 5 alternate;
+    animation: spin 3s linear infinite;
+  }
+  .img.active {
+    background-image: url("./images/red.png");
+  }
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

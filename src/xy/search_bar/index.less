@@ -1,0 +1,59 @@
+@scale: 1;
+//
+.basic_wrapper {
+  & > div {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .label {
+    color: #ffffff;
+    width: 88px * @scale;
+    font-size: 22px * @scale;
+    font-weight: 400;
+    height: 30px * @scale;
+    line-height: 30px * @scale;
+    margin-right: 8px;
+  }
+  .date_picker {
+    :global {
+      .ant-calendar-picker-input {
+        background-color: transparent;
+        border: 1px * @scale solid #00ffec;
+        border-radius: 4px * @scale;
+        height: 44px * @scale;
+
+        color: #ffffff;
+        font-size: 16px * @scale;
+        font-weight: 400;
+        line-height: 44px * @scale;
+      }
+      .ant-calendar-picker-icon {
+        color: #ffffff;
+        font-size: 16px * @scale;
+      }
+      .ant-calendar-picker-clear {
+        font-size: 16px * @scale;
+        width: 18px * @scale;
+        height: 18px * @scale;
+      }
+    }
+  }
+  .divider {
+    background-color: #fff;
+    width: 15px * @scale;
+    height: 2px * @scale;
+    margin: 0 20px * @scale;
+  }
+  .btn {
+    background: linear-gradient(180deg, rgba(53, 218, 229, 0.8) 0%, rgba(73, 118, 216, 0.3) 100%);
+    border: none;
+    margin-left: 24px * @scale;
+
+    color: #ffffff;
+    font-size: 22px * @scale;
+    font-weight: 400;
+    height: 48px* @scale;
+    line-height: 48px* @scale;
+    width: 96px* @scale;
+  }
+}

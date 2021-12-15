@@ -1,0 +1,55 @@
+.ywtg_slide_item {
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  .icon {
+    background-color: transparent;
+    background-size: 100% 100%;
+    height: 96px;
+    left: 50%;
+    position: absolute;
+    top: 0;
+    transform: translate(-50%, 0);
+    width: 96px;
+    z-index: 1;
+  }
+  .content {
+    background-color: rgba(0, 158, 255, 0.12);
+    border-radius: 6px;
+    // background-image: url('./images/bg.svg');
+    // background-size: 100% 100%;
+    border: 2px solid transparent;
+    margin-top: 48px;
+    padding-top: 48px;
+    position: relative;
+    text-align: center;
+    width: 240px;
+    &::before {
+      content: " ";
+      background-color: #4D606E;
+      border-radius: 50%;
+      width: 92px;
+      height: 92px;
+      position: absolute;
+      left: 50%;
+      top: -50%;
+      transform: translate(-50%, 48%);
+    }
+  }
+  .name {
+    color: #ffffff;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 46px;
+    margin-top: 12px;
+  }
+  .value {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 400;
+    line-height: 50px;
+    margin-top: 8px;
+    padding-bottom: 12px;
+  }
+}

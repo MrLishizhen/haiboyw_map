@@ -1,0 +1,146 @@
+.ywtg_map_control_basic_wrapper {
+  .item {
+    background: rgba(0, 160, 255, 0.4);
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+    width: 128px;
+    height: 128px;
+    position: relative;
+    margin: 10px 0;
+  }
+  .item + .item {
+    margin-left: 48px !important;
+  }
+  .active {
+    background-image: url("./images/bg_active.svg");
+    background-size: 100% 100%;
+    width: 148px;
+    height: 148px;
+    margin: 0;
+  }
+  .icon {
+    background-size: 100% 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .pop_item {
+    width: 204px;
+    height: 84px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    font-size: 36px;
+    line-height: 84px;
+    background-image: url("./images/item.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: none;
+
+    position: absolute;
+    top: -120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .item:hover {
+    .pop_item {
+      display: block;
+    }
+  }
+  // .pop_item + .pop_item {
+  //   margin-top: 8px;
+  // }
+  // .pop_item:hover,
+  // .pop_item.active {
+  //   background-image: url("./images/item_active.png");
+  // }
+}
+
+.overlay_wrapper {
+  padding: 0;
+  top: 120px !important;
+  :global {
+    .ant-popover-arrow {
+      display: none;
+    }
+    .ant-popover-inner {
+      background-color: transparent;
+      box-shadow: none;
+    }
+    .ant-popover-inner-content {
+      padding: 0;
+    }
+  }
+}
+
+.icon_YXGLD {
+  background-image: url("./images/YXGLD.png");
+}
+
+.icon_XDDQ {
+  background-image: url("./images/XDDQ.png");
+}
+
+.icon_FYLL {
+  background-image: url("./images/FYLL.png");
+}
+
+.icon_WYJCD {
+  background-image: url("./images/WYJCD.png");
+}
+
+.icon_cnBorder,
+.icon_cnCountry {
+  background-image: url("./images/cnBorder.png");
+}
+
+.icon_wangge {
+  background-image: url("./images/wangge.png");
+}
+
+.icon_juwei {
+  background-image: url("./images/juwei.png");
+}
+
+.icon_hedao {
+  background-image: url("./images/hedao.png");
+}
+
+.icon_people {
+  background-image: url("./images/people.svg");
+}
+
+.icon_road {
+  background-image: url("./images/road.svg");
+}
+
+.icon_buildingFFF {
+  background-image: url("./images/buildingFFF.svg");
+}
+
+.icon_buildingReal {
+  background-image: url("./images/buildingReal.svg");
+}
+
+.icon_cameraMaptile {
+  background-image: url("./images/cameraMaptile.svg");
+}
+
+.icon_CAMERAROTATE {
+  background-image: url("./images/CAMERAROTATE.svg");
+}
+
+.icon_sfs {
+  background-image: url("./images/buildingFFF.svg");
+}
+
+.icon_shipin {
+  background-image: url("./images/shipin.png");
+}
+
+// .icon_cnCountry {
+//   background-image: url("./images/buildingReal.svg");
+// }

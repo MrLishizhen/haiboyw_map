@@ -1,0 +1,73 @@
+.list_layout {
+  position: relative;
+  font-size: 48px;
+  color: #fff;
+  :global {
+    .swiper-container {
+      padding: 0 !important;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets {
+      // bottom: -40px;
+    }
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 95%;
+    height: 100%;
+    margin-left: 3%;
+    list-style: none;
+    text-align: center;
+    li {
+      margin-top: 90px;
+      margin-right: 28px;
+      display: inline-block;
+      overflow: hidden;
+      width: 400px;
+      height: 262px;
+      background: url(./img/back.png) no-repeat;
+      background-size: cover;
+      vertical-align: middle;
+      cursor: pointer;
+      .title {
+        margin-top: 60px;
+        font-size: 56px;
+      }
+      .value {
+        margin-top: 20px;
+      }
+    }
+    .activePoint {
+      margin: 0;
+      width: 370px;
+      height: 400px;
+      background: url(./img/active_back.png) no-repeat;
+      background-size: cover;
+      .title {
+        margin-top: 60px;
+      }
+    }
+  }
+  .prevImg {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    cursor: pointer;
+    img {
+      margin: 0;
+      width: 130px;
+      height: 134px;
+    }
+  }
+  .nextImg {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    cursor: pointer;
+    img {
+      margin: 0;
+      width: 130px;
+      height: 134px;
+    }
+  }
+}

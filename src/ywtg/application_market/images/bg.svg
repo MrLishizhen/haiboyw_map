@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="110px" viewBox="0 0 120 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>矩形</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#00BEFF" stop-opacity="0.204135708" offset="0%"></stop>
+            <stop stop-color="#00BEFF" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="长宁区城市运行管理中心" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="长宁区城市运行管理中心-20.12.18" transform="translate(-3075.000000, -453.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="编组-90" transform="translate(2931.000000, 396.000000)">
+                <rect id="矩形" x="144" y="57" width="120" height="110" rx="6"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

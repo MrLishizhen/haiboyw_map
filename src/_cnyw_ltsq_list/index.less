@@ -1,0 +1,219 @@
+.table_layout_case {
+  color: #00f0ff;
+  font-size: 48px;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  table {
+    width: 100%;
+    display: block;
+    border-collapse: collapse;
+    thead {
+      width: 100%;
+      display: block;
+      height: 144px;
+      line-height: 144px;
+      background: linear-gradient(
+        135deg,
+        rgba(12, 149, 212, 0.5) 0%,
+        rgba(5, 91, 169, 0.5) 100%
+      );
+      tr {
+        display: block;
+        width: 100%;
+      }
+      td {
+        display: inline-block;
+        width: 12.5%;
+        position: relative;
+        padding: 0;
+        text-align: center;
+        font-size: 56px;
+        font-weight: bold;
+      }
+      .line_flex {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        cursor: pointer;
+        .triangle {
+          margin-top: 60px;
+          margin-left: 8px;
+          height: 0;
+          border-left: 20px solid transparent;
+          border-right: 20px solid transparent;
+          transition: linear 0.2s;
+        }
+      }
+      .drop_layout {
+        position: absolute;
+        left: 25%;
+        background: linear-gradient(135deg, #249594 0%, #004397 100%);
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px 10px rgba(3, 32, 79, 0.4);
+        ul {
+          padding: 8px 32px;
+          max-height: 600px;
+          overflow-y: auto;
+          li {
+            max-width: 500px;
+            line-height: 102px;
+            border-bottom: 1px solid #008ad4;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            text-align: left;
+            cursor: pointer;
+          }
+          li:last-child {
+            border-bottom: none;
+          }
+        }
+        ul::-webkit-scrollbar {
+          width: 6px;
+          height: 40px;
+        }
+        ul::-webkit-scrollbar-thumb {
+          border-radius: 2px;
+          background: #033c6d;
+        }
+        ul::-webkit-scrollbar-track {
+          border-radius: 2px;
+          background: transparent;
+        }
+      }
+    }
+    tbody {
+      width: 100%;
+      display: block;
+      // height: 208px;
+      // height: 1438px;
+      height: 3598px;
+      overflow-y: auto;
+      tr {
+        display: block;
+        width: 100%;
+        border-bottom: 2px solid #023a6a;
+      }
+      td {
+        color: #fff;
+        display: inline-block;
+        line-height: 138px;
+        height: 138px;
+        width: 12.45%;
+        overflow: hidden;
+        text-align: center;
+        width: 411px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      .line {
+        cursor: pointer;
+      }
+      .active_line {
+        cursor: pointer;
+        background-color: rgba(5, 91, 169, 0.15);
+        td {
+          color: #0affc5;
+        }
+      }
+      .stage_color_act {
+        color: #00ff76;
+      }
+      .stage_color {
+        color: #999999;
+      }
+    }
+    tbody::-webkit-scrollbar {
+      width: 8px;
+      height: 40px;
+    }
+    tbody::-webkit-scrollbar-thumb {
+      border-radius: 2px;
+      background: #033c6d;
+    }
+    tbody::-webkit-scrollbar-track {
+      border-radius: 2px;
+      background: transparent;
+    }
+  }
+}
+
+.pop_box {
+  background-color: #004397;
+  ul {
+    list-style: none;
+    li {
+      color: #fff;
+      font-size: 48px;
+      line-height: 2;
+    }
+  }
+}
+
+.pop_card_class {
+  :global {
+    .ant-tooltip-content {
+      // background: linear-gradient(135deg, #249594 0%, #004397 100%);
+      background-color: #004397;
+      overflow-x: auto;
+      padding: 12px 18px 12px;
+      width: 1440px;
+    }
+    .ant-tooltip-inner {
+      background-color: transparent;
+    }
+  }
+}
+
+// .pagination_layout {
+//   text-align: center;
+//   :global {
+//     .ant-pagination {
+//       font-size: 48px;
+//       a {
+//         color: #0090FF;
+//       }
+//     }
+//     .ant-pagination-item-active {
+//       background-color: #40AEEB;
+//       a {
+//         color: #fff;
+//       }
+//     }
+//     .ant-pagination-item {
+//       color: #0090FF;
+//       min-width: 56px !important;
+//       height: 56px !important;
+//       line-height: 56px !important;
+//     }
+//     .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link {
+//       font-size: 30px;
+//       color: #0090FF;
+//       line-height: 30px;
+//       height: 48px;
+//     }
+//     .ant-pagination.mini .ant-pagination-prev, .ant-pagination.mini .ant-pagination-next {
+//       margin: 0 20px;
+//     }
+//   }
+// }
+
+.drop_down_2 {
+  left: 10% !important;
+}
+
+.drop_down_4 {
+  left: 32% !important;
+}
+
+.drop_down_6 {
+  left: 54% !important;
+}
+
+.drop_down_8 {
+  left: 69% !important;
+}

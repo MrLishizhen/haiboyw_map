@@ -1,0 +1,3 @@
+const data = [{"type":"","pinType":"","popup":"click2","sbbh":"","name":"","state":"","address":"","infotype":"","icon":"","X":"","Y":"","szms1":"","sz1":"","szms2":"","sz2":"","szms3":"","sz3":"","szms4":"","sz4":""},{"type":"养老机构","pinType":"YLJG","popup":"click2","sbbh":"1","name":"上海市长宁区社会福利院2","state":"","address":"红松路81弄158号","infotype":"","icon":"http://bigdata.cn.gov:8070/fastdfs/group1/M00/09/E0/wKgJx1_cBOOAHY2EAAAWzps0OR0430.png","X":"-9020.366352452646","Y":"-5861.3393359645215","szms1":"","sz1":"","szms2":"","sz2":"","szms3":"","sz3":"","szms4":"","sz4":""}]
+
+export default data;

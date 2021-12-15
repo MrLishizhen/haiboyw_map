@@ -1,0 +1,107 @@
+.basic_wrapper {
+  background-image: url("./images/bg01.png");
+  background-size: cover;
+  & > div {
+    height: 100%;
+    padding: 20px 40px 0 40px;
+  }
+  .close {
+    background-image: url("./images/close.png");
+    background-size: cover;
+    width: 54px;
+    height: 54px;
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: -16px;
+  }
+  .code {
+    color: #37b7f6;
+    font-size: 44px;
+    font-weight: bold;
+    line-height: 60px;
+    margin-bottom: 10px;
+  }
+  .record_title_wrapper {
+    margin-bottom: 16px;
+    & > div {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .record_square {
+    background-color: #00f3ff;
+    width: 20px;
+    height: 20px;
+    margin-right: 30px;
+  }
+  .record_title {
+    color: #00f3ff;
+    font-size: 32px;
+    line-height: 50px;
+  }
+  .event_list_wrapper {
+    .event_list_item {
+      margin-bottom: 28px;
+      .date {
+        color: #fff;
+        font-size: 32px;
+        line-height: 50px;
+        margin-bottom: 4px;
+      }
+      .content_wrapper {
+        background-image: url("./images/item_bg.png");
+        background-size: cover;
+        min-height: 200px;
+        padding: 16px 16px 16px 32px;
+      }
+      .table {
+        width: 98%;
+        margin-bottom: 16px;
+        & > thead > tr > th {
+          color: #23e9e5;
+          font-size: 32px;
+          font-weight: normal;
+          line-height: 50px;
+          text-align: center;
+        }
+        & > tbody > tr > td {
+          color: #fff;
+          font-size: 32px;
+          line-height: 50px;
+          text-align: center;
+        }
+      }
+      .content {
+        color: #fff;
+        font-size: 32px;
+        line-height: 1.5;
+        width: 96%;
+      }
+    }
+  }
+}
+
+.list_btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-size: cover;
+  width: 64px;
+  height: 64px;
+  opacity: 1;
+}
+
+.list_btn.next {
+  right: 0;
+  background-image: url("./images/right.png");
+}
+
+.list_btn.prev {
+  background-image: url("./images/left.png");
+}
+
+.list_btn.prev:hover,
+.list_btn.next:hover {
+  opacity: 1;
+}
