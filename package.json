@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "data": {
-    "widgetName": "waterPolozuhe_li_new"
+    "widgetName": "_arcgis_xy_2"
   },
   "scripts": {
     "dev": "npm run development",

@@ -175,11 +175,11 @@ export default class index extends Component {
                     position: [x, y],
                     icon: new AMap.Icon({
                         // 图标尺寸
-                        size: new AMap.Size(78, 130),
+                        size: new AMap.Size(39, 65),
                         // 图标的取图地址
                         image:icon || 'https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png',
                         // 图标所用图片大小
-                        // imageSize: new AMap.Size(78, 130),
+                        imageSize: new AMap.Size(39, 65),
                         // 图标取图偏移量
                         // imageOffset: new AMap.Pixel(-9, -3)
                     })
