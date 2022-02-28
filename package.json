@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "data": {
-    "widgetName": "_arcgis_xy_2"
+    "widgetName": "clock_li"
   },
   "scripts": {
     "dev": "npm run development",
@@ -25,9 +25,11 @@
     "css-loader": "^3.0.0",
     "echarts": "^5.2.1",
     "echarts-liquidfill": "^3.1.0",
+    "echarts-wordcloud": "^2.0.0",
     "element-resize-detector": "^1.1.15",
     "esri-loader": "^2.16.0",
     "gsap": "^2.1.3",
+    "http-proxy-middleware": "^2.0.1",
     "lodash": "^4.17.11",
     "md5": "^2.3.0",
     "moment": "^2.24.0",
@@ -38,7 +40,8 @@
     "react-dom": "^16.13.1",
     "react-draggable": "^4.2.0",
     "react-id-swiper": "^4.0.0",
-    "react-slick": "^0.28.1",
+    "react-lazyload": "^3.2.0",
+    "react-read-pdf": "^2.0.9",
     "react-zmage": "^0.8.5-beta.36",
     "recompose": "^0.30.0",
     "slick-carousel": "^1.8.1",

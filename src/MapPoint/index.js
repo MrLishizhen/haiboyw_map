@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import { isEqual } from 'lodash';
 import VDSwiper from "../common/VDSwiper";
 import styles from './index.less';

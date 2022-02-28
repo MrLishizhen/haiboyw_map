@@ -227,13 +227,23 @@ export default class index extends Component {
             };
         }
 
+        // return (
+        //     <div style={{ width, height, overflow: 'hidden' }}>
+        //         <div style={{ width, height, transform: `scale(${!mapType || mapType === 'arcgis' ? 1 : this.state.scale})` }}>
+        //             {!mapType || mapType === 'arcgis' ?
+        //                 <ArcgisMap code={`${code}`} zoom={zoom} center={{ x, y }} datas={{ ...this.state.pointsData, ...xzzxData }} /> :
+        //                 <LbsAmap code={`${code}`} zoom={zoom} center={{ x, y }} datas={{ ...this.state.pointsData, ...xzzxData }} mapCenter={this.state.mapCenter} />
+        //             }
+        //         </div>
+        //     </div>
+        // );
         return (
             <div style={{ width, height, overflow: 'hidden' }}>
                 <div style={{ width, height, transform: `scale(${!mapType || mapType === 'arcgis' ? 1 : this.state.scale})` }}>
-                    {!mapType || mapType === 'arcgis' ?
+                    {/*{!mapType || mapType === 'arcgis' ?*/}
                         <ArcgisMap code={`${code}`} zoom={zoom} center={{ x, y }} datas={{ ...this.state.pointsData, ...xzzxData }} /> :
                         <LbsAmap code={`${code}`} zoom={zoom} center={{ x, y }} datas={{ ...this.state.pointsData, ...xzzxData }} mapCenter={this.state.mapCenter} />
-                    }
+                    {/*}*/}
                 </div>
             </div>
         );

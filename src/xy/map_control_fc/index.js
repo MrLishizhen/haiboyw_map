@@ -13,6 +13,7 @@ const CONST_ITEMS = [
 
 /**
  * 800*204
+ * _ywtg_map_control_fc
  */
 export default class Index extends PureComponent {
     constructor(props) {

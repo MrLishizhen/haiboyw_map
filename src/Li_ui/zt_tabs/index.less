@@ -1,0 +1,23 @@
+.ztbox{
+  width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: flex-start;
+  .tabItem{
+    cursor: pointer;
+    height:32px;
+    font-size:18px;
+    text-align:center;
+    line-height:32px;
+    min-width: 120px;
+    margin-right:8px;
+    &.hot{
+      background: url(./img/hot.png) no-repeat center center/100% 100%;
+      color:rgba(255,255,255,.5);
+    }
+    &.nohot{
+      background: url(./img/nohot.png) no-repeat center center/100% 100%;
+      color:rgba(255,255,255,1);
+    }
+  }
+}

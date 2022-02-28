@@ -17,24 +17,46 @@ export default class Jindu extends Component {
         }
     }
 
+   numFormat=(num)=>{
+        num=num.toString().split(".");  // 分隔小数点
+        var arr=num[0].split("").reverse();  // 转换成字符数组并且倒序排列
+        var res=[];
+        for(var i=0,len=arr.length;i<len;i++){
+            if(i%3===0&&i!==0){
+                res.push(",");   // 添加分隔符
+            }
+            res.push(arr[i]);
+        }
+        res.reverse(); // 再次倒序成为正确的顺序
+        if(num[1]){  // 如果有小数的话添加小数部分
+            res=res.join("").concat("."+num[1]);
+        }else{
+            res=res.join("");
+        }
+        return res;
+    }
     // //绘图
     setEcharts = () => {
+        let that =this;
+
         // this.state.data
-        // let data =this.state.data;
+        let data =this.state.data;
         // let data = [{name: '中原街道办', value: 4000}, {name: '米公街道办', value: 20000}, {name: '王寨街道办', value: 60000}, {name: '汉江街道办',value: 800000}, {name: '屏襄门街道办', value: 40000}, {name: '屏襄门', value: 60000}, {name: '米公', value: 60000}, {name: '柿铺', value: 50000}, {name: '牛首', value: 50000}, {name: '太平店', value: 5000000}];
 
 
-        var data=[{name:"王寨",value:75392},{name:"汉江",value:74514},{name:"牛首镇",value:74166},{name:"屏襄门",value:66354},{name:"太平店镇",value:61614},{name:"清河口",value:46821,},{name:"七里河",value:30176,},{name:"柿铺",value:28413,},{name:"定中门",value:25167,},{name:"紫贞",value:23517}]
+        // var data=[{name:"王寨",value:75392},{name:"汉江",value:74514},{name:"牛首镇",value:74166},{name:"屏襄门",value:66354},{name:"太平店镇",value:61614},{name:"清河口",value:46821,},{name:"七里河",value:30176,},{name:"柿铺",value:28413,},{name:"定中门",value:25167,},{name:"紫贞",value:23517}]
         let xData2 = [];
         let data1 = [];
         let maxArr = [];
         let valueMax = 0;
 
         for (let i = 0; i < data.length; i++) {
+            typeof data[i].value === 'string' ? data[i].value = Number(data[i].value):data[i].value=data[i].value;
             xData2.push(data[i].name);
             data1.push(data[i].value);
             if(data[i].value>valueMax){
                 valueMax = data[i].value;
+
             }
         }
 
@@ -59,7 +81,7 @@ export default class Jindu extends Component {
                 maxArr.push(valueMax);
             }
         }
-        console.log(maxArr);
+        console.log(maxArr,123);
         // console.log(maxArr,xData2,data1)
         this.myChart = echarts.init(this.node);
         const option = {
@@ -145,7 +167,11 @@ export default class Jindu extends Component {
                         "position": "top",
                         "distance": 10,
                         fontSize:32,
-                        "color": "#01fff4"
+                        "color": "#01fff4",
+                        formatter:function(value){
+                            return that.numFormat(value.value);
+                            // console.log(value);
+                        }
                     },
                     data: data1,
                 },

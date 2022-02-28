@@ -1,0 +1,72 @@
+.checkbox{
+  width:24px;
+  height:24px;
+
+}
+.box{
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  font-weight: 600;
+  //font-family: PingFangSC-Semibold, PingFang SC;
+
+  :global{
+
+    .icon{
+      width:36px;
+      height:36px;
+      background: url(./img/timeout.png) no-repeat center center /100% 100%;
+      flex-shrink:0;
+    }
+    .title{
+      font-size:26px;
+      color:#fff;
+      flex-grow: 1;
+      text-align:center;
+    }
+    .reset-btn{
+      width:40px;
+      height:34px;
+      background: url('./img/cz.png') no-repeat center center/100% 100%;
+      margin-right:30px;
+      cursor: pointer;
+    }
+
+    .timeout-box{
+      width:160px;
+      height:48px;
+      background: url(./img/rectangular1.png) no-repeat center center /100% 100%;
+      margin-right:16px;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+    .surplus{
+      width:336px;
+      height:48px;
+      background: url(./img/rectangular2.png) no-repeat center center /100% 100%;
+      display:flex;
+      .surplus-item{
+        width:50%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        &:nth-child(1){
+          .icon{
+            width:30px;
+            height:36px;
+            background: url(./img/hasDisposal.png) no-repeat center center /100% 100%;
+          }
+        }
+        &:nth-child(2){
+          .icon{
+            width:30px;
+            height:36px;
+            background: url(./img/czz.png) no-repeat center center /100% 100%;
+          }
+        }
+      }
+    }
+  }
+}

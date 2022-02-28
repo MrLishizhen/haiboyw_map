@@ -1,0 +1,80 @@
+.webjichu{
+  width:1762px;
+  height:771px;
+  :global{
+    .swiper-pagination{
+      bottom:0;
+    }
+    .swiper-pagination-bullet{
+      width:16px;
+      height:16px;
+      background-color: #285D94;
+      &.swiper-pagination-bullet-active{
+        background-color: #65B0FF;
+        width:32px;
+        height:16px;
+        border-radius: 8px;
+      }
+    }
+  }
+  .emitBox{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    .emitImg{
+      width:95px;
+      height:58px;
+      background: url(./img/emit.png) no-repeat center center/100% 100%;
+      margin-bottom: 16px;
+    }
+    .emitText{
+      color:#fff;
+      font-size:24px;
+    }
+  }
+
+  .swiper_slide>div{
+    cursor: pointer;
+    display:flex;
+    margin-bottom: 24px;
+  }
+  .swiper_item_box{
+    width:566px;
+    height:360px;
+    position:relative;
+    //display:flex;
+    //flex-direction: column;
+
+    &:nth-child(3n-1){
+      margin:0 32px;
+    }
+    .mask{
+      position:absolute;
+      width:100%;
+      height:319px;
+      bottom:0;
+      left:0;
+      background-color: rgba(0,0,0,0);
+    }
+    .swiper_item_name{
+      display:block;
+      overflow:hidden; //超出的文本隐藏
+      text-overflow:ellipsis; //溢出用省略号显示
+      white-space:nowrap; //溢出不换行
+      width:540px;
+      font-size:18px;
+      font-weight: 600;
+      color:#fff;
+      line-height: 25px;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .swiper_item_iframe{
+      height:319px;
+      background: url(./img/iframe.png) no-repeat center center/100% 100%;
+    }
+  }
+}

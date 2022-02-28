@@ -163,7 +163,7 @@ export default class index extends Component {
     showRoad = (data) => {
 
         if (data) {
-            const { x, y ,icon} = data;
+            const { x, y ,icon,iconWidth,iconHeight} = data;
 
             if (this.map) {
                 if (this.marker) {
@@ -175,11 +175,11 @@ export default class index extends Component {
                     position: [x, y],
                     icon: new AMap.Icon({
                         // 图标尺寸
-                        size: new AMap.Size(39, 65),
+                        size: new AMap.Size(iconWidth||54,iconHeight||91),
                         // 图标的取图地址
                         image:icon || 'https://webapi.amap.com/theme/v1.3/markers/n/mark_r.png',
                         // 图标所用图片大小
-                        imageSize: new AMap.Size(39, 65),
+                        imageSize: new AMap.Size(iconWidth||54,iconHeight||91),
                         // 图标取图偏移量
                         // imageOffset: new AMap.Pixel(-9, -3)
                     })

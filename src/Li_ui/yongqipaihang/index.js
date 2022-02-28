@@ -17,7 +17,7 @@ export default class Jindu extends Component {
 
     // //绘图
     setEcharts = () => {
-
+        let that = this;
         //默认拿第一个
         this.myChart = echarts.init(this.node);
         let data = this.state.data;
@@ -101,7 +101,6 @@ export default class Jindu extends Component {
             xAxis: {
                 show: false,
                 type: 'value',
-
             },
             yAxis: [{
                 type: 'category',
@@ -132,10 +131,13 @@ export default class Jindu extends Component {
                 axisLine: 'none',
                 show: true,
                 axisLabel: {
+                    formatter:function(value){
+                        return that.numFormat(value);
+                    },
                     interval:0,
                     textStyle: {
                         color: function (value, index) {
-                            console.log(value);
+
                             if (index===0) {
                                 return '#FFBA1E'
                             } else {
@@ -197,7 +199,24 @@ export default class Jindu extends Component {
         this.setEcharts();
 
     }
-
+    numFormat=(num)=>{
+        num=num.toString().split(".");  // 分隔小数点
+        var arr=num[0].split("").reverse();  // 转换成字符数组并且倒序排列
+        var res=[];
+        for(var i=0,len=arr.length;i<len;i++){
+            if(i%3===0&&i!==0){
+                res.push(",");   // 添加分隔符
+            }
+            res.push(arr[i]);
+        }
+        res.reverse(); // 再次倒序成为正确的顺序
+        if(num[1]){  // 如果有小数的话添加小数部分
+            res=res.join("").concat("."+num[1]);
+        }else{
+            res=res.join("");
+        }
+        return res;
+    }
     shouldComponentUpdate(nextProps, nextState) {
         const {dataProvider, style} = nextProps;
         console.info('bubble shouldComponentUpdate', nextProps, this.props);
