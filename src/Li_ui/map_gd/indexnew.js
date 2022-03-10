@@ -145,44 +145,47 @@ export default class Map_gd extends Component {
         let markers = [];
         if(that.map&&Array.isArray(result)&&result.length>0){
             for (let i = 0; i < result.length; i++) {
-                if (result[i].exception) {
-                    result[i].icon = yc;
-                } else if (result[i].highUseClassC) {
-                    result[i].icon = gp;
-                } else if (result[i].isSlaOverTime) {
-                    result[i].icon = cs;
-                } else if (result[i].major) {
-                    result[i].icon = zd;
+                if(result[i].lng&&result[i].lat){
+                    if (result[i].exception) {
+                        result[i].icon = yc;
+                    } else if (result[i].highUseClassC) {
+                        result[i].icon = gp;
+                    } else if (result[i].isSlaOverTime) {
+                        result[i].icon = cs;
+                    } else if (result[i].major) {
+                        result[i].icon = zd;
+                    }
+
+                    let marker = new AMap.Marker({
+                        position: new AMap.LngLat(result[i].lng||0, result[i].lat||0),
+                        icon: new AMap.Icon({
+                            // 图标尺寸
+                            // achor: 'bottom-center',
+                            size: new AMap.Size(88, 88),
+                            // 图标的取图地址
+                            image: result[i].icon || '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+                            // 图标所用图片大小
+                            imageSize: new AMap.Size(88, 88),
+                            // 图标取图偏移量
+                            // imageOffset: new AMap.Pixel(-44, -88),
+                        }),
+                        anchor:'center',
+                        zIndex: 100,
+                        // icon: result[i].icon||'//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
+                        offset: new AMap.Pixel(0,0),
+                        title: result[i].questionTitle,
+                    });
+                    marker.setExtData({result: result[i]})
+
+                    marker.on('click', (e) => {
+
+                        const extData = e.target.getExtData() || {};
+                        that.state.handlers.onClick && that.state.handlers.onClick({...extData});
+                    })
+                    marker.setMap(that.map);
+                    markers.push(marker);
                 }
-                console.log(result[i].icon)
-                let marker = new AMap.Marker({
-                    position: new AMap.LngLat(result[i].lng, result[i].lat),
-                    icon: new AMap.Icon({
-                        // 图标尺寸
-                        // achor: 'bottom-center',
-                        size: new AMap.Size(88, 88),
-                        // 图标的取图地址
-                        image: result[i].icon || '//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
-                        // 图标所用图片大小
-                        imageSize: new AMap.Size(88, 88),
-                        // 图标取图偏移量
-                        // imageOffset: new AMap.Pixel(-44, -88),
-                    }),
-                    anchor:'center',
-                    zIndex: 100,
-                    // icon: result[i].icon||'//a.amap.com/jsapi_demos/static/demo-center/icons/poi-marker-default.png',
-                    offset: new AMap.Pixel(0,0),
-                    title: result[i].questionTitle,
-                });
-                marker.setExtData({result: result[i]})
 
-                marker.on('click', (e) => {
-
-                    const extData = e.target.getExtData() || {};
-                    that.state.handlers.onClick && that.state.handlers.onClick({...extData});
-                })
-                marker.setMap(that.map);
-                markers.push(marker);
             }
 
             that.setState({markers:[]},()=>{
