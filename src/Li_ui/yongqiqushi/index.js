@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import echarts from 'echarts';
+import * as echarts from 'echarts';
 import {isEqual} from "lodash";
 
 export default class Jindu extends Component {
@@ -20,7 +20,7 @@ export default class Jindu extends Component {
 
         //默认拿第一个
         this.myChart = echarts.init(this.node);
-        let data = this.state.data;
+        // let data = this.state.data;
         //
         // const data = [
         //     {name:'2',value:'40'},{name:'4',value:'45'},{name:'6',value:'50'},{name:'8',value:'55'},{name:'10',value:'50'},{name:'12',value:'40'},{name:'14',value:'45'},{name:'16',value:'40'},{name:'18',value:'38'},{name:'20',value:'45'},{name:'22',value:'50'},{name:'24',value:'60'},{name:'26',value:'70'},{name:'28',value:'45'},{name:'30',value:'30'},

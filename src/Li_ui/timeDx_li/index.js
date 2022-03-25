@@ -71,7 +71,7 @@ export default class TimeDx extends Component {
     }
 
     onChange = (date, dateString) => {
-        console.log(dateString)
+
         this.setState({
             time: dateString ? moment(dateString, 'YYYY-MM-DD HH:mm:ss') : undefined
         });
@@ -83,12 +83,12 @@ export default class TimeDx extends Component {
         const {time, show} = this.state;
 
         return (
-            <div className={styles.time_box} style={{width:60}}>
+            <div className={styles.time_box} style={{width:48}}>
                 <span className={styles.i_cont} onClick={this.timeIconClick}></span>
                 <div className={styles.time_tc} style={{zIndex:show?12:-1}}>
-                    <div className={styles.time} style={{width:show?160:0}}>
+                    <div className={styles.time} style={{width:show?122:0}}>
                         <DatePicker locale={locale} value={time} bordered={false} allowClear={false}
-                                    onChange={this.onChange}></DatePicker>
+                                    onChange={this.onChange} className={styles.timeColor} ></DatePicker>
                     </div>
 
                     <span className={styles.i_cont}

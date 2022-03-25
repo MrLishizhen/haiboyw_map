@@ -1,0 +1,41 @@
+.wujitixierji_box{
+  height:543px;
+  width:1280px;
+  display:flex;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  .wujitixierji_li{
+    width:25%;
+    height:34px;
+    margin-bottom: 30px;
+    display:flex;
+    justify-content: center;
+
+    .wujitixierji_item{
+      padding:0 25px;
+      cursor: pointer;
+      width:221px;
+      height:34px;
+      font-size:22px;
+      color:#fff;
+      line-height:34px;
+      text-align: center;
+      display:flex;
+      justify-content: space-between;
+      align-items: center;
+      background: url(./img/bg.png) no-repeat center center/100% 100%;
+      .wujitixierji_name{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1;
+      }
+      .wujitixierji_icons{
+        flex-shrink: 0;
+        display:flex;
+        width:60px;
+        justify-content: space-between;
+      }
+    }
+  }
+}

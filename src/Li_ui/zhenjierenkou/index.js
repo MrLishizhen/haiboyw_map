@@ -40,11 +40,11 @@ export default class Jindu extends Component {
         let that =this;
 
         // this.state.data
-        let data =this.state.data;
+        // let data =this.state.data;
         // let data = [{name: '中原街道办', value: 4000}, {name: '米公街道办', value: 20000}, {name: '王寨街道办', value: 60000}, {name: '汉江街道办',value: 800000}, {name: '屏襄门街道办', value: 40000}, {name: '屏襄门', value: 60000}, {name: '米公', value: 60000}, {name: '柿铺', value: 50000}, {name: '牛首', value: 50000}, {name: '太平店', value: 5000000}];
 
 
-        // var data=[{name:"王寨",value:75392},{name:"汉江",value:74514},{name:"牛首镇",value:74166},{name:"屏襄门",value:66354},{name:"太平店镇",value:61614},{name:"清河口",value:46821,},{name:"七里河",value:30176,},{name:"柿铺",value:28413,},{name:"定中门",value:25167,},{name:"紫贞",value:23517}]
+        var data=[{name:"王寨",value:75392},{name:"汉江",value:74514},{name:"牛首镇",value:74166},{name:"屏襄门",value:66354},{name:"太平店镇",value:61614},{name:"清河口",value:46821,},{name:"七里河",value:30176,},{name:"柿铺",value:28413,},{name:"定中门",value:25167,},{name:"紫贞",value:23517}]
         let xData2 = [];
         let data1 = [];
         let maxArr = [];
@@ -81,7 +81,7 @@ export default class Jindu extends Component {
                 maxArr.push(valueMax);
             }
         }
-        console.log(maxArr,123);
+
         // console.log(maxArr,xData2,data1)
         this.myChart = echarts.init(this.node);
         const option = {

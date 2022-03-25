@@ -9,7 +9,9 @@ export default class index extends Component {
     constructor(props) {
         super(props);
         const {dataProvider = []} = props;
-        const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
+        let dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
+        // dataQuery=[{name:'东津新区2',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区1',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区',count: 12345,ycl:123,wcl:123,zb:58,},{name: '樊城区',count:12345,ycl: 123,wcl:123,zb: 58},{name: '高新技术产业开发区',count:12345,ycl:123,wcl:123,zb:58},{name:'襄城区',count: 12345,ycl: 123,wcl:123,zb:58},{name:'襄州区',count:12345,ycl:123,wcl:123,zb:58,},{name:'鱼梁洲经济开发区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'保康县',count:12345,ycl:123,wcl:123,zb:58,},{name:'谷城县',count: 12345,ycl:123,wcl:123,zb:58,},{name:'老河口市',count:12345,ycl:123,wcl:123,zb:58}]
+
         dataQuery.sort((a, b) => b.count - a.count);
         let newData = [];
         for (let i = 0; i < dataQuery.length; i += 3) {
@@ -18,7 +20,8 @@ export default class index extends Component {
         let translateY = 0;
         if (dataQuery.length > 9) {
             translateY = -160;
-            newData.unshift(dataQuery.slice(dataQuery.length - 3, dataQuery.length));
+
+            newData.unshift(dataQuery.slice(dataQuery.length - (dataQuery.length%3), dataQuery.length));
             newData.push(dataQuery.slice(0, 3));
         }
         this.swiperRef = React.createRef();
@@ -59,13 +62,15 @@ export default class index extends Component {
                 translateY: -160 * (index + 1),
                 transition: 1,
             }, () => {
-                if ((dataLength / 3) - 1 === (index)) {
+
+                if (Math.ceil((dataLength / 3) - 1) === (index)) {
 
                     this.swiperRef.current.style.transform = 'translate(0)';
                     this.swiperRef.current.style.transition = 'transform 0s';
 
 
                     setTimeout(()=>{
+
                         this.swiperRef.current.style.transition = `transform ${this.state.transition}s`;
                         this.setState({
                             index: 0,
@@ -102,7 +107,7 @@ export default class index extends Component {
 
                 if (dataQuery.length > 9) {
                     translateY = -160;
-                    newData.unshift(dataQuery.slice(dataQuery.length - 3, dataQuery.length))
+                    newData.unshift(dataQuery.slice(dataQuery.length - (dataQuery.length%3), dataQuery.length))
                     newData.push(dataQuery.slice(0, 3));
                 }
 

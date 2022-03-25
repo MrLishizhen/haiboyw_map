@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "data": {
-    "widgetName": "map_arcgis_li"
+    "widgetName": "wuji_mb_list_li"
   },
   "scripts": {
     "dev": "npm run development",

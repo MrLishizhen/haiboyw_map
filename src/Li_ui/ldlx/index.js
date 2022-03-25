@@ -2,7 +2,7 @@
 
 
 import React,{Component} from 'react';
-import echarts from 'echarts';
+import * as echarts from 'echarts';
 
 import {isEqual} from "lodash";
 

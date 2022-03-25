@@ -21,7 +21,7 @@ export default class Jindu extends Component {
     setEcharts = () => {
         // this.state.data
         let data = this.state.data;
-             // [{name: '感谢', value: '40'}, {name: '建议', value: '20'}, {name: '求助', value: '60'}, {name: '投诉',value: '80'}, {name: '咨询', value: '40'}];
+            // data= [{name: '感谢', value: '40'}, {name: '建议', value: '20'}, {name: '求助', value: '60'}, {name: '投诉',value: '80'}, {name: '咨询', value: '40'}];
 
 
 

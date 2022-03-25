@@ -9,7 +9,9 @@ export default class index extends Component {
     constructor(props) {
         super(props);
         const {dataProvider = []} = props;
-        const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
+        let dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
+        dataQuery=[{name:'东津新区2',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区1',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区',count: 12345,ycl:123,wcl:123,zb:58,},{name: '樊城区',count:12345,ycl: 123,wcl:123,zb: 58},{name: '高新技术产业开发区',count:12345,ycl:123,wcl:123,zb:58},{name:'襄城区',count: 12345,ycl: 123,wcl:123,zb:58},{name:'襄州区',count:12345,ycl:123,wcl:123,zb:58,},{name:'鱼梁洲经济开发区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'保康县',count:12345,ycl:123,wcl:123,zb:58,},{name:'谷城县',count: 12345,ycl:123,wcl:123,zb:58,},{name:'老河口市',count:12345,ycl:123,wcl:123,zb:58}]
+
         dataQuery.sort((a, b) => b.count - a.count);
         let newData = [];
         for (let i = 0; i < dataQuery.length; i += 3) {

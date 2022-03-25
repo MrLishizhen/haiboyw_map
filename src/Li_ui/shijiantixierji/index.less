@@ -1,0 +1,40 @@
+.shijian_er_box{
+  height:592px;
+  max-width:1380px;
+  overflow-y: auto;
+  display:flex;
+  flex-wrap: wrap;
+  //justify-content: space-between;
+  font-weight: 600;
+  .shijian_er_li{
+    width:340px;
+    height:280px;
+    background: url(./img/item.png) center center/100% 100%;
+    display:flex;
+    flex-direction: column;
+    color:#fff;
+    & span{
+      cursor: pointer;
+      margin:0 auto;
+      width:80%;
+      text-align:center;
+    }
+    .name{
+      padding-top:170px;
+      font-size:32px;
+      line-height:32px;
+      cursor: pointer;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .value{
+      color:#87B3FF;
+      font-size:48px;
+      line-height:67px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

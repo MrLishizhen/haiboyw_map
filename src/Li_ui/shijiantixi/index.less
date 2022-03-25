@@ -1,0 +1,52 @@
+.shijian_box{
+  width:532px;
+  height:379px;
+  background: url(./img/bg.png) no-repeat center center/100% 100%;
+  padding:26px 30px 22px 20px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: auto;
+  .shijian_ul{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 57px;
+  }
+  .shijian_kong_ul{
+    &::after{
+      content: '';
+      width:144px;
+      height:0px;
+    }
+  }
+  .shijian_ul:last-child{
+    margin-bottom: 0;
+  }
+  .item_li{
+    cursor: pointer;
+    width:144px;
+    height:40px;
+    text-align: center;
+    line-height: 40px;
+    background: url(./img/item.png) no-repeat center center/100% 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    span{
+      width:80%;
+      height:100%;
+      font-size:18px;
+      font-weight: 600;
+      color:#fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      i{
+        padding-left:10px;
+        font-style: normal;
+        color:#4AE8FF;
+      }
+    }
+  }
+}
