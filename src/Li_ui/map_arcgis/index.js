@@ -279,16 +279,38 @@ export default class Map_arcgis extends Component {
 
                     // if (!_.isEmpty(data)) {
 
-                    //     _that.bridge.Invoke({
-                    //         'ActionName': 'padding',
-                    //         "Parameters": {
-                    //             "isUI": false,
-                    //             "left": 0,
-                    //             "top": 0,
-                    //             "right": 0,
-                    //             "bottom": 0
-                    //         }
-                    //     });
+                        _that.bridge.Invoke({
+                            "ActionName": "ShowData",
+                            "Parameters": {
+                                "name": "car_layer",
+                                "type": "layer",
+                                "isLocate": true,
+                                "data": {
+                                    "layers": {
+                                        "name": "县市区",
+
+                                    }
+                                },
+                                // "isHighlight": true,
+                                "legendVisible": false,
+                                "popupEnabled": false,
+                                "renderer": {
+                                    "type": "simple",
+                                    "symbol": {
+                                        "type": "line-3d",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "line",
+                                                "size": 1.5,
+                                                "material": {
+                                                    "color": "#86CFF"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        });
                     // }
                     // if(true){
                     //     _that.bridge.Invoke();
@@ -340,6 +362,7 @@ export default class Map_arcgis extends Component {
         let mapData = mapdata.map(v => {
             v.x = mapLngLat[v.name].x;
             v.y = mapLngLat[v.name].y;
+            v.countString = this.format(v.count)
             return v;
         })
         if(mapData.length>0){
@@ -376,13 +399,12 @@ export default class Map_arcgis extends Component {
                         {
                             "fields": [
                                 "#.name",
-                                "#.count",
+                                "#.countString",
                             ],
                             "color": [
                                 255, 255, 255, 1
                             ],
-                            "size": 12,
-                            'textalign': 'center',
+                            "size": 14,
                         }
                     ]
                 }
@@ -410,29 +432,31 @@ export default class Map_arcgis extends Component {
         })
 
 
-        this.bridge.Invoke({
-            "ActionName": "ShowData",
-            "Parameters": {
-                "name": "map_layer",
-                "data": {
-                    "content": render,
-                    "parsedata": "function(d){return d}",
-                    "parsegeometry": "function(item){return {x:Number(item.lng),y:Number(item.lat)}}"
-                },
-                "legendVisible": false,
-                "popupEnabled": false,
-                'renderer': {
-                    type: 'unique-value',
-                    field: 'icon',
-                    uniqueValueInfos: render.map((item) => ({
-                            value: item.icon,
-                            symbol: this.defaultMarks(item.icon),
-                        })
-                    ),
+        if(result.length>0){
+            this.bridge.Invoke({
+                "ActionName": "ShowData",
+                "Parameters": {
+                    "name": "map_layer",
+                    "data": {
+                        "content": render,
+                        "parsedata": "function(d){return d}",
+                        "parsegeometry": "function(item){return {x:Number(item.lng),y:Number(item.lat)}}"
+                    },
+                    "legendVisible": false,
+                    "popupEnabled": false,
+                    'renderer': {
+                        type: 'unique-value',
+                        field: 'icon',
+                        uniqueValueInfos: render.map((item) => ({
+                                value: item.icon,
+                                symbol: this.defaultMarks(item.icon),
+                            })
+                        ),
 
+                    }
                 }
-            }
-        })
+            })
+        }
     }
 
     defaultMarks(url) {
@@ -448,7 +472,6 @@ export default class Map_arcgis extends Component {
     addEventListenerFunc = (bridge) => {
         bridge.addEventListener((arg) => {
             const {action, data} = arg;
-            console.log({action, data})
             switch (action) {
                 case 'mapclick':
                     console.log(data)
@@ -469,13 +492,13 @@ export default class Map_arcgis extends Component {
 
         return `
                 <div  style="width:200px;height:100px;color:#94cfff;background:url(http://10.203.2.88:8090/fastdfs/20220316/c9d66de288bc1b422bc271cd8a43260a.png) no-repeat center center/100%;font-size:18px;font-weight: 600;">
-                    <div style="width:100%;height:50%;display:flex;justify-content: center;align-items: center;">
-                        <span style="line-height:50px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/a8a7024336c55ed925aa849a72e402c6.jpg) no-repeat 20px center;">已处理</span>
-                        <span style="line-height:50px;color:#3BFEB2;width:50%;padding-left:5px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(ywc)}}</span>
+                    <div style="width:100%;height:50%;display:flex;">
+                        <span style="padding-left:20px;padding-top:13px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/a8a7024336c55ed925aa849a72e402c6.jpg) no-repeat 20px center;">已处理</span>
+                        <span style="padding-left:20px;padding-top:13px;color:#3BFEB2;width:50%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(ywc)}}</span>
                     </div>
                     <div style="width:100%;height:50%;display:flex;justify-content: center;align-items: center;">
-                        <span style="line-height:50px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/c4757be50d5f61224fb858c5d68845e6.jpg) no-repeat 20px center;">未处理</span>
-                        <span style="line-height:50px;color:#76B8FF;width:50%;padding-left:5px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(wwc)}}</span>
+                        <span style="padding-left:20px;padding-top:13px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/c4757be50d5f61224fb858c5d68845e6.jpg) no-repeat 20px center;">未处理</span>
+                        <span style="padding-top:13px;color:#76B8FF;width:50%;padding-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(wwc)}}</span>
                     </div>
                 </div>
 `
@@ -489,7 +512,9 @@ export default class Map_arcgis extends Component {
             "Parameters": {
                 "name": "car_layer",
                 "mode": "delete",
-            }
+
+            },
+            "legendVisible": false,
         })
     }
 

@@ -1,49 +1,15 @@
 import React, {Component} from "react";
 import {isEqual} from "lodash";
 import styles from './index.less'
-
-const Item_li = (props) => {
-    let {obj = {}} = props;
-
-    return (
-        <div className={styles.shijian_san_li}>
-            <div title={obj.name||''} className={styles.shijian_name}>
-                {obj.name||''}
-            </div>
-
-            <table className={styles.shijian_right} border={0} cellpadding={0} cellspacing={0}>
-                <tr>
-                    <td>处置时限</td>
-                    <td>结案时限</td>
-                    <td>处置力量</td>
-                    <td></td>
-                </tr>
-                <tr className={styles.tr_color_td}>
-                    <td  title={obj.czsx||''}>{obj.czsx||''}</td>
-                    <td  title={obj.jasx||''}>{obj.jasx||''}</td>
-                    <td  title={obj.czll||''}>{obj.czll||''}</td>
-                    <td  title={obj.zt||''}>{obj.zt||''}</td>
-                </tr>
-                <tr>
-                    <td>事件描述</td>
-                    <td colspan="3" title={obj.sjms||''} style={{textAlign:'left',width:320,textIndent:'16px',color:'#AED4FF',maxWidth:'326px'}}>{obj.sjms||''}</td>
-
-                </tr>
-            </table>
-
-        </div>
-    )
-}
-
+import TcBox from '../shijiantixisanji_new_list/index'
 export default class index extends Component {
     constructor(props) {
         super(props);
         const {dataProvider = []} = props;
 
         let dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
-        dataQuery = this.checkArr(dataQuery);
 
-        /*
+        /*{name:'tianxia ',czsx:'20',jasx:30,czll:'中国公安',zt:'一般'}
         *{
 
                 }
@@ -51,6 +17,8 @@ export default class index extends Component {
 
         this.state = {
             data: dataQuery,
+            isShow:false,
+            TcData:[]
         }
 
     }
@@ -75,15 +43,13 @@ export default class index extends Component {
 
     }
 
-    //处理函数，数组分类
-    arrayPro(data) {
-        const result = [];
-        for (let i = 0; i < data.length; i += 3) {
-            if (data[i]) {
-                result.push(data.slice(i, i + 3));
-            }
-        }
-        return result;
+    itemLiClick(v) {
+        let {data} = this.state;
+        let obj = data.find(item=>item.name===v.name);
+        this.setState({
+            isShow:true,
+            TcData:[obj]
+        })
     }
 
     componentWillUnmount() {
@@ -98,7 +64,7 @@ export default class index extends Component {
                 // colorList = dataProvider[0].series.map(item => item.option.itemStyle.color);
             } else {
                 let dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
-                dataQuery = this.checkArr(dataQuery);
+
                 this.setState({
                     data: dataQuery
                 }, () => {
@@ -109,26 +75,49 @@ export default class index extends Component {
         return !isEqual(nextProps, this.props) || !isEqual(nextState, this.state);
     }
 
-    checkArr(data) {
-        const list = [];
-        for (let i = 0; i < data.length; i++) {
-            if (data[i]) {
-                list.push(data[i])
-            }
+    hideBox=(e)=>{
+        if(e.target===document.querySelector('#pBox')){
+            this.setState({
+                isShow:false,
+                TcData:[]
+            })
         }
-        return list;
+
     }
+    getDom = () => {
+
+        if (document.getElementById("panel_canvas")) {
+
+            return document.getElementById("panel_canvas")
+        } else {
 
 
+            return document.getElementById("root")
+        }
+
+    }
     render() {
-        let {data} = this.state;
-
+        let {data,isShow,TcData} = this.state;
+        console.log(data)
         return (
             <div className={styles.shijian_san_box}>
                 {
-                    data.map((v,i) => {
-                        return (<Item_li key={i}  obj={v}></Item_li>)
+                    data.map((v, i) => {
+                        return (<div className={styles.shijian_san_li} key={i}>
+                            <div onClick={()=>this.itemLiClick(v)} className={styles.shijian_name}>
+                                <span title={v.name || ''} >{v.name || ''}</span>
+                            </div>
+                        </div>)
                     })
+                }
+                { isShow?
+                    ReactDOM.createPortal(
+                        <div className={styles.pBox} id={'pBox'} onClick={this.hideBox}>
+                            <TcBox dataProvider={TcData}></TcBox>
+                        </div>,
+                        this.getDom()
+                    ):
+                    ''
                 }
             </div>
         )

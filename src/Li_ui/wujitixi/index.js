@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {isEqual} from "lodash";
 import styles from './index.less'
-
+import bc from './img/bg.png'
 export default class index extends Component {
     constructor(props) {
         super(props);
@@ -78,13 +78,14 @@ export default class index extends Component {
 
     render() {
         let {data=[]} = this.state;
+        let {clickFunc} = this.props
         return (
-            <div style={{width:1425,overflow:'auto',}}>
+            <div style={{width:1425,overflow:'auto',margin:'0 auto'}}>
                 <div className={styles.wujitixi_box} style={{width:data.length*285}}>
                     {
                         data.map((v,i)=>{
-                            return (<div className={styles.wujitixi_item} key={i} onClick={()=>this.itemLiClick(v)} style={{background:`url(${v.bc||''}) no-repeat center center/100% 100%`}}>
-                                <span style={{color:'#fff',fontSize:'32px',marginTop:250}} title={v.name}>{v.name}</span>
+                            return (<div className={styles.wujitixi_item} key={i} onClick={()=>clickFunc(v)} style={{background:`url(${bc}) no-repeat center center/100% 100%`}}>
+                                <span style={{color:'#fff',fontSize:'32px',marginTop:162}} title={v.name}>{v.name}</span>
                                 {/*<span style={{color:'#fff',fontSize:'32px',marginTop:205}} title={v.name}>{v.name}</span>*/}
                                 {/*<span style={{color:'#87B3FF',fontSize:'48px',marginTop:24}}>{v.count}</span>*/}
                             </div>)

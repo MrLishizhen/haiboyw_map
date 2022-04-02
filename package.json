@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "data": {
-    "widgetName": "wuji_mb_list_li"
+    "widgetName": "xinxixiangqing_li"
   },
   "scripts": {
     "dev": "npm run development",

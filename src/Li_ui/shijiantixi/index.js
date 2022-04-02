@@ -8,7 +8,7 @@ export default class index extends Component {
         const {dataProvider = []} = props;
 
         let dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
-        // {name: '大屏预警',id: 1,count:10}, {name: '大屏预警', id: 2,count:10}, {name: '大屏预警', id: 3,count:10}, {name: '大屏预警', id: 4,count:10}, {name: '大屏预警', id: 5,count:10}, {name: '大屏预警',id: 6,count:10}, {name: '大屏预警', id: 7,count:10}, {name: '大屏预警', id: 8,count:10}, {name: '大屏预警', id: 9,count:10}, {name: '大屏预警', id: 10,count:10}, {name: '大屏预警',id: 11,count:10},
+        // {name: '城市管理',subCount:175,count:8}, {name: '城乡建设',subCount:79,count:15}, {name: '大屏预警', subCount:2,count:1}, {name: '道路交通',subCount:63, count:11}, {name: '公共安全',subCount:96, count:6}, {name: '公共服务',subCount:146,count:9}, {name: '联勤联动', subCount:56,count:2}, {name: '矛盾纠纷', subCount:23,count:3}, {name: '生态环境', subCount:78,count:17}, {name: '卫生健康',subCount:38, count:6}, {name: '智能发现',subCount:19,count:3},
         dataQuery = this.arrayPro(dataQuery);
         this.state = {
             data: dataQuery,
@@ -89,7 +89,9 @@ export default class index extends Component {
                                 {
                                     u.map(v => {
                                         return (<div className={styles.item_li} onClick={() => this.itemLiClick(v)}>
-                                            <span title={v.name+(v.count||'')}>{v.name} <i>{v.count||''}</i></span>
+                                            <span title={v.name}>{v.name} </span>
+                                            <i title={v.count||''}>{v.count||''}</i>
+                                            <i style={{color:'#4AFFBB'}} title={v.subCount||''}>{v.subCount||''}</i>
                                         </div>)
                                     })
                                 }

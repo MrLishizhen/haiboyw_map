@@ -51,7 +51,7 @@ export default class index extends Component {
     }
     shouldComponentUpdate(nextProps, nextState) {
         const {dataProvider, style} = nextProps;
-
+        console.log(nextProps);
         if (!isEqual(dataProvider, this.props.dataProvider)) {
             if (dataProvider && dataProvider.length === 1 && dataProvider[0].series) {
                 // colorList = dataProvider[0].series.map(item => item.option.itemStyle.color);
@@ -76,11 +76,12 @@ export default class index extends Component {
 
     render() {
         let {data=[]} = this.state;
+        let {onMbClick} = this.props;
         return (
             <div className={styles.mb_box}>
                 {
                     data.map((v,i)=>{
-                        return <div key={i} className={styles.mb_item} onClick={()=>this.itemLiClick(v)} title={v.name}>
+                        return <div key={i} className={styles.mb_item} onClick={()=>onMbClick(v)} title={v.name}>
                             {v.name}
                         </div>
                     })

@@ -78,6 +78,7 @@ export default class index extends Component {
 
     render() {
         let {data=[]} = this.state;
+        let {clickFunc} = this.props;
         return (
             <div className={styles.wujitixierji_box}>
                 {
@@ -86,8 +87,8 @@ export default class index extends Component {
                             <div className={styles.wujitixierji_item}>
                                 <span title={v.name} className={styles.wujitixierji_name}>{v.name}</span>
                                 <span className={styles.wujitixierji_icons}>
-                                    <i  onClick={()=>this.itemLiClick({_type:0,...v})} title={'查看人员'} style={{width:24,height:25,background:'url('+ry+') no-repeat center center/100% 100%'}}></i>
-                                    <i  onClick={()=>this.itemLiClick({_type:1,...v})} title={'查看部门'} style={{width:24,height:25,background:'url('+xz+') no-repeat center center/100% 100%'}}></i>
+                                    <i  onClick={()=>clickFunc({_type:0,...v})} title={'查看人员'} style={{width:24,height:25,background:'url('+ry+') no-repeat center center/100% 100%'}}></i>
+                                    <i  onClick={()=>clickFunc({_type:1,...v})} title={'查看部门'} style={{width:24,height:25,background:'url('+xz+') no-repeat center center/100% 100%'}}></i>
                                 </span>
 
                             </div>

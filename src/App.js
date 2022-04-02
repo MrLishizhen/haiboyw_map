@@ -7,9 +7,9 @@ import React, {useState, useEffect, Fragment} from 'react';
 // import Select from './weather_li';
 // import Select from './Li_ui/map_gd/index_xy_sj';
 // import Select from './Li_ui/columnarArea/index'
-import Select from './Li_ui/wuji_mb_list/index'
-// import Select from './Li_ui/map_arcgis/index'
-// import Select from './gis-demo-kai/index'
+// import Select from './Li_ui/gdfb_li_new/index_chengdu_new'
+import Select from './Li_ui/xinxixiangqing_new/index'
+// import Select from './Li_ui/columnarArea/index'
 //轮播图
 // import Select from './Li_ui/AutoScrollTable/index';
 // import Select from './yq_cy/index';
@@ -217,7 +217,7 @@ const datalist2 = [{"ID": 1, "A": "1", "B": "上海虹桥枢纽已发现体温�
 
 class App extends React.Component {
     state = {
-        gis: [''],
+        gis: [],
         dataProvider: [{
             "ID": 11009,
             "NAME": "",
@@ -1049,14 +1049,14 @@ class App extends React.Component {
             <Fragment>
                 {/* <div style={{ width: 1920, height: 660, backgroundColor: 'white', display: 'inline-block' }}> */}
                 <div style={{
-                    width: 2182, height: 720,
+                    width:1980, height: 600,
                     backgroundColor: '#485C6D'
                     /*, position: 'relative', transform: 'scale(0.25)', transformOrigin: '0 0'*/
                 }}>
                     {/*["420606",3840,2160,18,112.1365989605144, 32.04559347308233]*/}
                     <Select dataProvider={
                         [
-                            // ...this.state.gis
+                            ...this.state.gis
                         ]
                     } style={this.state.style}/>
                 </div>
@@ -1111,7 +1111,7 @@ class App extends React.Component {
 
 
                     this.setState({
-                        gis:[{name: '维稳预警',id: 1,count:100}, {name: '维稳预警事件', id: 2,count:10}, {name: '维稳预警事件', id: 3,count:10}, {name: '维稳预警事件', id: 4,count:10}, {name: '维稳预警事件', id: 5,count:10}, {name: '维稳预警事件',id: 6,count:10}, {name: '维稳预警事件', id: 7,count:10}, {name: '维稳预警事件', id: 8,count:10}]
+                        gis:[{name:'新区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'新区1',count: 12345,ycl:123,wcl:123,zb:58,},{name:'新区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区',count: 12345,ycl:123,wcl:123,zb:58,},{name: '樊城区',count:12345,ycl: 123,wcl:123,zb: 58},{name: '高新技术产业开发区',count:12345,ycl:123,wcl:123,zb:58},{name:'襄城区',count: 12345,ycl: 123,wcl:123,zb:58},{name:'襄州区',count:12345,ycl:123,wcl:123,zb:58,},{name:'鱼梁洲经济开发区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'保康县',count:12345,ycl:123,wcl:123,zb:58,},{name:'谷城县',count: 12345,ycl:123,wcl:123,zb:58,},{name:'老河口市',count:12345,ycl:123,wcl:123,zb:58}]
                         // gis: [{
                         //     time: '2022-01-05',
                         //     show: true

@@ -103,7 +103,7 @@ export default class ColumnarArea extends Component {
                 }
             },
             yAxis: {
-                max: 100,
+                // max: 100,
                 axisLine: {
                     show: false,
 
@@ -130,7 +130,7 @@ export default class ColumnarArea extends Component {
             },
             // tooltip: {},
             grid: {
-                left: '10%',
+                left: '15%',
                 top: '5%',
                 right: '5%',
                 bottom: '20%',
