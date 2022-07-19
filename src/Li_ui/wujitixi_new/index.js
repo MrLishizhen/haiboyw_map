@@ -5,7 +5,10 @@ import Wujitixi from '../wujitixi/index'
 import Wujitixierji from '../wujitixierji/index_new';
 import Wuji_mb_list from '../wuji_mb_list/index';
 import {message} from 'antd'
-
+message.config({
+    duration:1.5,
+    maxCount: 2,
+});
 export default class Five_system extends Component {
 
     state = {
@@ -115,7 +118,7 @@ export default class Five_system extends Component {
     }
 
     clickFunc(data) {
-        console.log(data,'到我这里了');
+
         let {mb_list} = this.state;
         let cfDataIndex = mb_list.findIndex(v=>v.pid===data.pid);//重复的id
         let mb = [...mb_list];
@@ -127,7 +130,7 @@ export default class Five_system extends Component {
                 if (res && res.code === '0000') {
 
                     if (res.data.total === 0) {
-                        message.error('无数据');
+                        message.info('提示：无人员信息');
                     }else{
                         _that.state.handlers.onClick && _that.state.handlers.onClick({...data});
                     }
@@ -155,7 +158,7 @@ export default class Five_system extends Component {
                     }
 
                 }else{
-                    message.error('无下属部门')
+                    message.info('提示：无下属部门')
 
                 }
 
@@ -199,7 +202,7 @@ export default class Five_system extends Component {
                     list:datas
                 })
             }else{
-                message.error('无下属部门')
+                message.info('提示：无下属部门')
             }
 
 

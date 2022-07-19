@@ -346,7 +346,7 @@ export default class Jindu extends Component {
 
     render() {
         return (
-            <div
+            <div ref={node=>this.node=node}
                  style={{width: this.state.data[0]?.widthString||200, height: this.state.data[0]?.widthString||200}}></div>
         )
     }

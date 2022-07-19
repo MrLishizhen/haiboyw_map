@@ -1,0 +1,71 @@
+.ywtg_street_header_wrapper {
+  margin-bottom: 32px;
+  padding: 8px 0;
+  & > div {
+    color: #00ffe0;
+    font-size: 44px;
+    font-weight: 600;
+    line-height: 60px;
+    position: relative;
+    text-align: center;
+    &::before {
+      content: "";
+      background-image: url("./images/bg.png");
+      background-size: 100% 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 348px;
+      height: 36px;
+    }
+  }
+}
+
+.ywtg_street_item_wrapper {
+  height: calc(~"100% - 152px");
+  // overflow-y: auto;
+  overflow: hidden;
+  & > div {
+    height: 100%;
+    width: calc(~"100% + 20px");
+    overflow-y: auto;
+    & > div {
+      width: calc(~"100% - 20px");
+    }
+  }
+  .ywtg_street_item {
+    color: #ffffff;
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 60px;
+    position: relative;
+    &::after {
+      content: "";
+      background-image: url("./images/arrow.svg");
+      background-size: 100% 100%;
+      position: absolute;
+      top: 15px;
+      right: 0;
+      width: 42px;
+      height: 30px;
+    }
+  }
+  .ywtg_street_hover {
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  .disbaled {
+    color: grey;
+    &::after {
+      background-image: url("./images/arrow-disbaled.svg");
+    }
+    &:hover {
+      text-decoration: unset;
+    }
+  }
+  .ywtg_street_item + .ywtg_street_item {
+    margin-top: 32px;
+  }
+}

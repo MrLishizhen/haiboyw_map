@@ -1,0 +1,11 @@
+.video-toolbar {
+  display: none;  
+}
+
+.video-root {
+
+}
+
+.video-root:hover .video-toolbar{
+  display: flex;
+}

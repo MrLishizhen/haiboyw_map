@@ -72,9 +72,11 @@ export default class Jindu extends Component {
                 // colorList = dataProvider[0].series.map(item => item.option.itemStyle.color);
             } else {
                 const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
-                this.selectHot(dataQuery);
-                this.setState({data: dataQuery}, () => {
 
+                this.setState({data: dataQuery}, () => {
+                    // let value = this.selectHot(dataQuery);
+                    // console.log(value,123)
+                    // this.handleChange(value)
                 });
             }
         }
@@ -85,9 +87,11 @@ export default class Jindu extends Component {
 
         for(let i = 0; i<data.length;i++){
             if(data[i]?.hot){
+
                 return data[i].value;
             }
             if(i===data.length-1){
+
                 return data[0].value;
             }
         }
@@ -99,7 +103,7 @@ export default class Jindu extends Component {
         return (
             <div ref={node => this.node = node} className={styles.box}>
                 {
-                    Array.isArray(data)?<Select  defaultValue={hot} style={{ width: width,height:height,color:'#fff',fontSize:18,fontWeight:600 }} onChange={this.handleChange}>
+                    Array.isArray(data)?<Select  defaultValue={hot} style={{ width: width,height:height,color:'#fff',fontSize:18,fontWeight:500 }} onChange={this.handleChange}>
                         {
                             data.map((item,i)=>{
                                 let {name,value,...rest} = item;

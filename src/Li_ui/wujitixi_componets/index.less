@@ -1,0 +1,128 @@
+.com_box{
+  width:1490px;
+  height:840px;
+  background: url(./img/bc2.png) no-repeat center center/100% 100%;
+  padding:40px;
+  display:flex;
+  .com_left{
+    width:300px;
+    flex-shrink: 0;
+    overflow:hidden auto;
+    background: rgba(21,76,140,0.5);
+
+    .com_tree{
+      color:#fff;
+
+      :global{
+
+        .ant-tree-title{
+          color:#fff;
+          font-size:18px;
+        }
+      }
+    }
+    //background: linear-gradient(135deg, rgba(92, 139, 255, 0.1) 0%, rgba(92, 139, 255, 0) 100%);
+
+  }
+  .com_right{
+    margin-left:40px;
+    flex-grow:1 ;
+    display:flex;
+    flex-direction: column;
+    background: url(./img/rightbj.png) no-repeat center center/100% 100%;
+    .table_box{
+      flex-grow: 1;
+    }
+    .pagin{
+      margin-bottom: 20px;
+      flex-shrink: 0;
+      height:32px;
+      text-align:center;
+    }
+  }
+  .emit{
+    width:100%;
+    height:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-size:22px;
+    color:#fff;
+    flex-direction: column;
+    .emit_img{
+      width:90px;
+      height:58px;
+      margin-bottom: 10px;
+    }
+  }
+  :global{
+    .ant-tree li .ant-tree-node-content-wrapper:hover{
+      background-color:#1890ff;
+    }
+    .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected{
+      background-color:#1890ff;
+    }
+    .ant-table-header,.ant-table-fixed-header > .ant-table-content > .ant-table-scroll > .ant-table-body,.ant-table-placeholder{
+      background: rgba(0,0,0,0);
+    }
+    .ant-table-thead{
+      background: url(./img/bt.png) no-repeat center center/100% 100%;
+    }
+    .ant-table-thead > tr > th{
+      background: rgba(0,0,0,0);
+      color:#fff;
+      font-size:18px;
+      border-bottom: 0;
+      font-weight: 600;
+    }
+    td{
+      font-size:18px;
+      color:rgba(174, 212, 255, 1);
+    }
+    .ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-thead > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td, .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td{
+      background:rgba(21, 76, 140, 0.1);
+      color:#fff;
+    }
+
+    .ant-table-tbody > tr{
+      background:url(./img/zx.png) no-repeat left bottom/100%;
+    }
+    .ant-table-fixed-header .ant-table-scroll .ant-table-header::-webkit-scrollbar{
+      border:0;
+    }
+    .ant-table-tbody > tr > td{
+      border:0;
+    }
+    .ant-tree li span.ant-tree-switcher.ant-tree-switcher_close .ant-tree-switcher-icon, .ant-tree li span.ant-tree-switcher.ant-tree-switcher_close .ant-select-switcher-icon{
+      font-size:18px;
+    }
+    .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open .ant-tree-switcher-icon, .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open .ant-select-switcher-icon{
+      font-size:18px;
+    }
+
+    .ant-pagination-prev .ant-pagination-item-link, .ant-pagination-next .ant-pagination-item-link{
+      background: rgba(109, 154, 255, 0.25);
+      border-color:rgba(109, 154, 255, 0.25);
+
+    }
+    .ant-pagination-item-link{
+      color:#fff;
+    }
+    .ant-pagination-item{
+
+      background: rgba(109, 154, 255, 0.25);
+      border-color:rgba(109, 154, 255, 0.25);
+      &.ant-pagination-item-active{
+        background: rgba(109, 154, 255, 1);
+
+        a{
+          color:#fff;
+        }
+      }
+      a{
+        color:rgba(174, 212, 255, 1);
+      }
+    }
+  }
+
+}

@@ -5,7 +5,7 @@
 // import Select from "./Li_ui/Rivers_components/index";
 // import Select from "./clock/index";
 
-import Select from './Li_ui/xinxixiangqing_new/index'
+import Select from './xy/jiaohushuniu/index'
 // import Select from "./Li_ui/xinxixiangqing/index"
 // import Select from './Li_ui/gdfb_li/index';
 // import Select from "./gis-demo/index";

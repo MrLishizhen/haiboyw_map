@@ -8,10 +8,10 @@ import React, {useState, useEffect, Fragment} from 'react';
 // import Select from './Li_ui/map_gd/index_xy_sj';
 // import Select from './Li_ui/columnarArea/index'
 // import Select from './Li_ui/gdfb_li_new/index_chengdu_new'
-import Select from './Li_ui/xinxixiangqing_new/index'
+import Select from './Li_ui/jiaohushuniu/index'
 // import Select from './Li_ui/columnarArea/index'
 //轮播图
-// import Select from './Li_ui/AutoScrollTable/index';
+// import Select from './Li_ui/AutoScrollTable/index';Y
 // import Select from './yq_cy/index';
 
 // import Select from './gis-demo/index';
@@ -217,7 +217,16 @@ const datalist2 = [{"ID": 1, "A": "1", "B": "上海虹桥枢纽已发现体温�
 
 class App extends React.Component {
     state = {
-        gis: [],
+        gis: [{
+            "flowNo": 1,
+            "creatDate": "2021/5/18 12:36:14",
+            "serialNumber": 123456,
+            "street": "天山路街道",
+            "flowStatus": "处置中",
+            "classA": "物联感知",
+            "classC": "事件名称",
+            "addr": "地址"
+        }],
         dataProvider: [{
             "ID": 11009,
             "NAME": "",
@@ -1049,14 +1058,23 @@ class App extends React.Component {
             <Fragment>
                 {/* <div style={{ width: 1920, height: 660, backgroundColor: 'white', display: 'inline-block' }}> */}
                 <div style={{
-                    width:1980, height: 600,
+                    width:1746, height: 463,
                     backgroundColor: '#485C6D'
                     /*, position: 'relative', transform: 'scale(0.25)', transformOrigin: '0 0'*/
                 }}>
                     {/*["420606",3840,2160,18,112.1365989605144, 32.04559347308233]*/}
                     <Select dataProvider={
                         [
-                            ...this.state.gis
+                            {
+                                "flowNo": 1,
+                                "creatDate": "2021/5/18 12:36:14",
+                                "serialNumber": 123456,
+                                "street": "天山路街道",
+                                "flowStatus": "处置中",
+                                "classA": "物联感知",
+                                "classC": "事件名称",
+                                "addr": "地址"
+                            }
                         ]
                     } style={this.state.style}/>
                 </div>
@@ -1081,7 +1099,7 @@ class App extends React.Component {
           style: { info: { "type": "自发自处", "flowNo": "CNS20210802007922", "questionTitle": "新渔浦广友小区沿河晾晒已由居委处理", "creatDate": "2021-08-02 09:43:57", "addr": "长宁区 福泉路 129号/", "flowStatus": "结束", "upPicture": "[{\"downloadPath\":\"/upload/2021-08/5d5d634507f83c5fa1d5c8a11d6ffb2d.jpg\",\"serverId\":\"1reyqcyuQxqrU4IBijFzwUaCiKB3TD720Lu5OBG9O70oq2mh8ZINldenki0wwwMZB\",\"url\":\"http://220.196.244.98:9527/itsmApp/upload/2021-08/5d5d634507f83c5fa1d5c8a11d6ffb2d.jpg\"}]", "caseDonePhoto": "[{\"downloadPath\":\"/upload/2021-08/5d5d634507f83c5fa1d5c8a11d6ffb2d.jpg\",\"serverId\":\"1reyqcyuQxqrU4IBijFzwUaCiKB3TD720Lu5OBG9O70oq2mh8ZINldenki0wwwMZB\",\"url\":\"http://220.196.244.98:9527/itsmApp/upload/2021-08/5d5d634507f83c5fa1d5c8a11d6ffb2d.jpg\"}]" } },
           dataProvider: [{ "type": "style", "wrapper": { "width": 816, "height": 860 }, "subWrapper": { "height": 780 }, "main": { "width": 704, "height": 712, "padding": "34px 16px" } }, { "page": 1, "rows": [{ "createDate": "2021-07-27 15:20:04", "createUser": "嵇毅华", "flowNo": "20210727023630", "fromNodeId": "node-200", "isDel": false, "nodeName": "办结反馈", "operationContent": "用户【嵇毅华】执行操作【确认作废】，工单状态由【作废审核】改为【已取消】，操作意见为：【作废】", "operationType": "确认作废", "orderNodeId": "end", "redundancy": [], "updateDate": "2021-07-27 15:20:04", "useTimeMinute": "193.83333", "userId": 1015 }, { "createDate": "2021-07-27 15:19:53", "createUser": "嵇毅华", "flowNo": "20210727023630", "fromNodeId": "node-200", "isDel": false, "nodeName": "派单处置", "operationContent": "用户【嵇毅华】执行操作【作废】，工单状态由【待分派】改为【作废审核】，操作意见为：【未达立案标准】", "operationType": "作废", "orderNodeId": "node-200", "redundancy": [], "updateDate": "2021-07-27 15:19:53", "useTimeMinute": "193.65", "userId": 1015 }, { "createDate": "2021-07-27 12:06:14", "createUser": "物联感知平台", "flowNo": "20210727023630", "fromNodeId": "node-200", "isDel": false, "nodeName": "派单处置", "operationContent": "用户【物联感知平台】执行操作【系统自动派单】，工单状态由【系统自动开单】改为【待分派】", "operationType": "系统自动派单", "orderNodeId": "node-200", "redundancy": [], "updateDate": "2021-07-27 12:06:14", "useTimeMinute": "0", "userId": 3 }], "searchFilter": [], "size": 9999, "total": 3 }]
         })}>发送</button> */}
-                <button style={{width: 240, height: 72}} onClick={() => {
+                <button style={{width: 240, height: 72,}} onClick={() => {
                     // let data = [{
                     //     name:'襄阳市',
                     //     lng: '112.121743',
@@ -1111,7 +1129,8 @@ class App extends React.Component {
 
 
                     this.setState({
-                        gis:[{name:'新区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'新区1',count: 12345,ycl:123,wcl:123,zb:58,},{name:'新区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津',count: 12345,ycl:123,wcl:123,zb:58,},{name:'东津新区',count: 12345,ycl:123,wcl:123,zb:58,},{name: '樊城区',count:12345,ycl: 123,wcl:123,zb: 58},{name: '高新技术产业开发区',count:12345,ycl:123,wcl:123,zb:58},{name:'襄城区',count: 12345,ycl: 123,wcl:123,zb:58},{name:'襄州区',count:12345,ycl:123,wcl:123,zb:58,},{name:'鱼梁洲经济开发区',count: 12345,ycl:123,wcl:123,zb:58,},{name:'保康县',count:12345,ycl:123,wcl:123,zb:58,},{name:'谷城县',count: 12345,ycl:123,wcl:123,zb:58,},{name:'老河口市',count:12345,ycl:123,wcl:123,zb:58}]
+                        gis: ["天气&汛情&空气质量&火警&安全生产&疫情防控&城管事件&地质灾害&城市内涝&森林防火",{"level":"黄色","description":"目前，襄阳市区及各县市大部地区仍有轻到中度、局部重度霾，预计未来24小时仍将持续，请注意防范。","time":"2022-01-19 14:24:43","type":"霾","department":"襄阳市气象台","class":"天气"},{"level":"橙色","description":"预计今天夜间到明天上午，襄阳市区及各县市（区）将出现能见度小于500米，局部小于100米的雾，请注意防范。","time":"2022-01-18 21:43:04","type":"大雾","department":"襄阳市气象台","class":"天气"},{"level":"黄色","description":"公众加强健康防护，结合实际情况可以采取部分临时管控措施或提前采取黄色预警响应措施。","time":"2022-01-19 13:00:00","type":"空气质量","department":"环保局","class":"空气质量"}]
+
                         // gis: [{
                         //     time: '2022-01-05',
                         //     show: true

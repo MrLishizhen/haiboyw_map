@@ -12,7 +12,7 @@ const { Option } = Select;
 const eventTypeUrl =
   // window.origin === 'http://localhost:8080' ?
   // 'http://119.3.53.170:9527/cmdbApp/api/cidata/getMultiLevelData' :
-  'http://10.7.52.21:9527/cmdbApp/api/cidata/getMultiLevelData';
+  'http://10.203.4.224:9527/cmdbApp/api/cidata/getMultiLevelData';
 
 export default class List extends PureComponent {
   constructor(props) {
@@ -157,7 +157,7 @@ export default class List extends PureComponent {
     });
   }
 
-  /* 
+  /*
     获取事件状态
   */
   getEventStatus() {
@@ -166,7 +166,7 @@ export default class List extends PureComponent {
     axios.post(
       // window.origin === 'http://localhost:8080' ?
       // 'http://119.3.53.170:9527/userOrg/api/org/dict/dictByCodeGroup' :
-      'http://10.7.52.21:9527/userOrg/api/org/dict/dictByCodeGroup', params, {
+      'http://10.203.4.224:9527/userOrg/api/org/dict/dictByCodeGroup', params, {
       headers: {
         checkToken: 'no'
       }
@@ -180,7 +180,7 @@ export default class List extends PureComponent {
     })
   }
 
-  /* 
+  /*
     获取事件归属
   */
   getEventSource() {
@@ -218,7 +218,7 @@ export default class List extends PureComponent {
     axios.post(
       // window.origin === 'http://localhost:8080' ?
       // 'http://119.3.53.170:9527/itsmApp/visData/getFlowInfoList' :
-      'http://10.7.52.21:9527/itsmApp/visData/getFlowInfoList', params, {
+      'http://10.203.4.224:9527/itsmApp/visData/getFlowInfoList', params, {
       headers: {
         checkToken: 'no'
       }

@@ -1,8 +1,15 @@
-import {Component} from 'react';
-// import styles from './index.less'
+import React, {Component} from 'react';
+import styles from './index.less'
 import _, {isEqual} from "lodash";
 
 import elementResizeDetectorMaker from 'element-resize-detector';
+import moment from "moment";
+
+
+import wg1 from "./img/wg1.png";
+import bgk from './img/bgk.png';
+import hqw from "./img/hqw.png";
+import dh from './img/dh.png'
 /*
 开启县市区
 * {
@@ -26,6 +33,7 @@ import elementResizeDetectorMaker from 'element-resize-detector';
 *
 *
 * */
+let mapYear = '';
 const mapLngLat = {
     "谷城县": {"x": 111.38529285782161, "y": 32.166956427202024, "z": 0},
     "宜城市": {"x": 112.44877541576764, "y": 31.7176382061526, "z": 0},
@@ -126,11 +134,30 @@ export default class Map_arcgis extends Component {
         const {dataProvider = []} = props;
         const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
         this.resizeEvent = _.debounce(this.onresize.bind(this), 500);
+        this.mapYear = '';
         this.state = {
+            opacity: false,
+            render:[],
             mapReady: false,
             zoom: 8.6,
+            ldllData:[
+                {
+                    name:'自治力量',
+                    hot:false,
+                    layer:'檀溪街道双报到网格',
+                    id:0,
+                    color:'#3BFEB2'
+                },
+                {
+                    name:'处置力量',
+                    hot:false,
+                    layer:'檀溪街道',
+                    id:1,
+                    color:'#4AE8FF'
+                }
+            ],
             center: {
-                "x": 111.93605393844483, "y": 31.864383392789907
+                "x": 111.93605393844489, "y": 31.864383392789897, 'z': 0
             },
 
             data: dataQuery
@@ -279,38 +306,7 @@ export default class Map_arcgis extends Component {
 
                     // if (!_.isEmpty(data)) {
 
-                        _that.bridge.Invoke({
-                            "ActionName": "ShowData",
-                            "Parameters": {
-                                "name": "car_layer",
-                                "type": "layer",
-                                "isLocate": true,
-                                "data": {
-                                    "layers": {
-                                        "name": "县市区",
 
-                                    }
-                                },
-                                // "isHighlight": true,
-                                "legendVisible": false,
-                                "popupEnabled": false,
-                                "renderer": {
-                                    "type": "simple",
-                                    "symbol": {
-                                        "type": "line-3d",
-                                        "symbolLayers": [
-                                            {
-                                                "type": "line",
-                                                "size": 1.5,
-                                                "material": {
-                                                    "color": "#86CFF"
-                                                }
-                                            }
-                                        ]
-                                    }
-                                }
-                            }
-                        });
                     // }
                     // if(true){
                     //     _that.bridge.Invoke();
@@ -347,6 +343,38 @@ export default class Map_arcgis extends Component {
                 _that.setState({mapReady: true}, function () {
 
                     if (Array.isArray(_that.state.data) && _that.state.data.length !== 0) {
+                        _that.bridge.Invoke({
+                            "ActionName": "ShowData",
+                            "Parameters": {
+                                "name": "map_line",
+                                "type": "layer",
+                                "isLocate": true,
+                                "data": {
+                                    "layers": {
+                                        "name": "县市区",
+
+                                    }
+                                },
+                                // "isHighlight": true,
+                                "legendVisible": false,
+                                "popupEnabled": false,
+                                "renderer": {
+                                    "type": "simple",
+                                    "symbol": {
+                                        "type": "line-3d",
+                                        "symbolLayers": [
+                                            {
+                                                "type": "line",
+                                                "size": 1.5,
+                                                "material": {
+                                                    "color": "#86CFF"
+                                                }
+                                            }
+                                        ]
+                                    }
+                                }
+                            }
+                        });
                         _that.setMarker()
                     }
                 })
@@ -355,9 +383,61 @@ export default class Map_arcgis extends Component {
         });
     }
 
+    // createPopupTemplate_new = (nameField, label1, value1, label2, value2, extra) => {
+    //     function clickcreate(value){
+    //         console.log(123456,value)
+    //     }
+    //     return `
+    //         <div style='
+    //             background-color: rgba(20, 55, 82, 0.8);
+    //             border-radius: 5px;
+    //             color: #fff;
+    //             font-size: 36px;
+    //             line-height: 1.5;
+    //             min-width: 480px;
+    //             max-width: 840px;
+    //         '>
+    //             <div style='
+    //                 background: #0f85d5;
+    //                 border-radius: 5px 5px 0 0;
+    //                 color: #fff;
+    //                 font-size: 40px;
+    //                 font-weight: bolder;
+    //                 line-height: 2;
+    //                 padding: 16px 48px 16px 32px;
+    //                 text-align: center;
+    //             '>
+    //                 {${nameField}}
+    //             </div>
+    //             <div style='padding: 0 32px'>
+    //                 <table style='
+    //                     border-collapse: separate;
+    //                     border-spacing: 0px 32px;
+    //                     max-width: 720px;
+    //                     word-break: break-all;
+    //                     word-wrap: break-word;
+    //                 '>
+    //                     <tbody>
+    //                         <tr>
+    //                             <td style='min-width: 200px; color: #00c2ff'>${label1}</td>
+    //                             <td>{${value1}}</td>
+    //                             <td></td>
+    //                         </tr>
+    //                         <tr>
+    //                             <td style='min-width: 200px; color: #00c2ff'>${label2}</td>
+    //                             <td>{${value2}}</td>
+    //                             <td onclick="${clickcreate(value2)}" style="width:58px;height:48px;background:url('http://10.203.2.88:8090/fastdfs/20220409/83af6777f4287eedecf4d793bfb38c57.jpg') no-repeat 10px center/48px 48px"></td>
+    //                         </tr>
+    //
+    //                     </tbody>
+    //                 </table>
+    //             </div>
+    //         </div>
+    //     `;
+    // }
     setMarker = () => {
 
-        let {result = [],mapdata=[]} = this.state.data[0];
+        let {result = [], mapdata = [], shequData = []} = this.state.data[0];
 
         let mapData = mapdata.map(v => {
             v.x = mapLngLat[v.name].x;
@@ -365,7 +445,7 @@ export default class Map_arcgis extends Component {
             v.countString = this.format(v.count)
             return v;
         })
-        if(mapData.length>0){
+        if (mapData.length > 0) {
             this.bridge.Invoke({
                 "ActionName": "ShowData",
                 "Parameters": {
@@ -378,7 +458,7 @@ export default class Map_arcgis extends Component {
                     "legendVisible": false,
                     "popupEnabled": true,
                     'popupTemplate': {
-                        'content': this.createPopupTemplate('ycl', 'wcl')
+                        'content': this.createPopupTemplate('ycl', 'wcl', 'zywc', 'zwwc')
                     },
                     "renderer": {
                         "type": "simple",
@@ -411,52 +491,188 @@ export default class Map_arcgis extends Component {
             })
 
         }
+
+        let shequ = [];
+
+        shequData.map(u => {
+            u.icon = 'http://10.203.2.88:8090/fastdfs/20220311/ca9f077ca523e94411bddd3251941f21.png'
+            if (u.lat && u.lng) {
+
+                if (u.departments) {
+                    let list = [];
+                    let departments = JSON.parse(u.departments);
+                    for (let key in departments) {
+                        list.push(departments[key]);
+                    }
+                    u.departmentsList = list.join(',')
+                } else {
+                    u.departmentsList = ''
+                }
+
+
+                shequ.push(u);
+            }
+        })
+
+        this.bridge.Invoke({
+            "ActionName": "ShowData",
+            "Parameters": {
+                "name": "map_layer2",
+                "data": {
+                    "content": shequ,
+                    "parsedata": "function(d){return d}",
+                    "parsegeometry": "function(item){return {x:Number(item.lat),y:Number(item.lng)}}"
+                },
+                "legendVisible": false,
+                "popupEnabled": false,
+                // 'popupTemplate': {
+                //     'content': this.createPopupTemplate_new('name', '职位', 'position', '电话', 'mobile')
+                // },
+                'renderer': {
+                    type: 'unique-value',
+                    field: 'icon',
+                    uniqueValueInfos: shequ.map((item) => ({
+                            value: item.icon,
+                            symbol: {
+                                type: 'picture-marker',
+                                url: item.icon || '',
+                                width: '64px',
+                                height: '64px',
+                            },
+                        })
+                    ),
+
+                }
+            }
+        })
+
+        console.log(12345, 'zai ')
         // console.log('我之心了', mapData)
         let render = [];
-        if (result.length === 0) return;
+
         result.map((u) => {
 
-            if (u.exception) {
-                u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/26775b83142d84ddf47a4d134ef33241.png';
-            } else if (u.highUseClassC) {
-                u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/d2da00962b0384ddd989c73702657cf5.png';
-            } else if (u.isSlaOverTime) {
-                u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/06bfd081d55b264c1ccbb02f1ad23c3b.png';
-            } else if (u.major) {
-                u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/b381a51d01132c5afe1a3b624dc869e3.png'
-            }
+            // if (u.exception) {
+            //     u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/26775b83142d84ddf47a4d134ef33241.png';
+            // } else if (u.highUseClassC) {
+            //     u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/d2da00962b0384ddd989c73702657cf5.png';
+            // } else if (u.isSlaOverTime) {
+            //     u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/06bfd081d55b264c1ccbb02f1ad23c3b.png';
+            // } else if (u.major) {
+            //     u.icon = 'http://10.203.2.88:8090/fastdfs/20220307/b381a51d01132c5afe1a3b624dc869e3.png'
+            // } else {
+            u.icon = 'http://10.203.2.88:8090/fastdfs/20220408/6c74de0fdd259628f8bb1739103bbca2.jpg'
+            // }
             if (u.icon && u.lat && u.lng) {
                 render.push(u);
             }
 
         })
+        this.setState({
+            render:render
+        })
+
+        this.bridge.Invoke({
+            "ActionName": "ShowData",
+            "Parameters": {
+                "name": "map_layer",
+                "data": {
+                    "content": render,
+                    "parsedata": "function(d){return d}",
+                    "parsegeometry": "function(item){return {x:Number(item.lng),y:Number(item.lat)}}"
+                },
+                "legendVisible": false,
+                "popupEnabled": false,
+                'renderer': {
+                    type: 'unique-value',
+                    field: 'icon',
+                    uniqueValueInfos: render.map((item) => ({
+                            value: item.icon,
+                            symbol: this.defaultMarks(item.icon),
+                        })
+                    ),
+
+                }
+            }
+        })
+
+        if (render.length > 0) {
 
 
-        if(result.length>0){
+            if (render[0]?.city && render[0].city.indexOf('高新') === -1 && render[0].city.indexOf('鱼梁洲') === -1) {
+                this.mapYear = render[0].city + '网格';
+                this.clearWg(true,'', {x: render[0].lng || '', y: render[0].lat || ''}, 14)
+
+            }
+
+        } else {
+            let {opacity} = this.state;
+            if (this.mapYear !== '') {
+
+                this.clearWg(false);
+
+                this.mapYear = '';
+            }
+
+        }
+    }
+    clearWg = (visible,name, obj, zoom, isopacity) => {
+        let {center, opacity} = this.state;
+        if (visible) {
+            center = obj;
+        }
+        if (!opacity || isopacity) {
             this.bridge.Invoke({
-                "ActionName": "ShowData",
-                "Parameters": {
-                    "name": "map_layer",
-                    "data": {
-                        "content": render,
-                        "parsedata": "function(d){return d}",
-                        "parsegeometry": "function(item){return {x:Number(item.lng),y:Number(item.lat)}}"
-                    },
-                    "legendVisible": false,
-                    "popupEnabled": false,
+                'ActionName': 'ShowData',
+                'Parameters': {
+                    'name': 'wangge',
+                    'visible': visible || false,
+                    'type': 'layer',
+                    'legendVisible': false,
+                    'popupEnabled': false,
+                    // 'popupTemplate': {
+                    //     'content': this.createPopupTemplate_new('BGNAME', '区域名称', 'COMNAME', '街道名称', 'STREETNAME')
+                    // },
                     'renderer': {
-                        type: 'unique-value',
-                        field: 'icon',
-                        uniqueValueInfos: render.map((item) => ({
-                                value: item.icon,
-                                symbol: this.defaultMarks(item.icon),
-                            })
-                        ),
-
+                        type: 'simple',
+                        symbol: {
+                            type: 'simple-fill',
+                            color: [74, 232, 255, 0.4],
+                            style: 'solid',
+                            outline: {
+                                color: [74, 232, 255, 0.8],
+                                width: 1
+                            }
+                        },
+                    },
+                    'data': {
+                        'layers': [
+                            {
+                                // 'name': '老河口市网格'
+                                // 'name': '宜城市网格'
+                                // 'name': '谷城县网格'
+                                'name': name||this.mapYear
+                            }
+                        ]
                     }
                 }
+
             })
         }
+
+        this.bridge.Invoke(
+            {
+                'ActionName': 'goToPosition',
+                'Parameters': {
+                    "legendVisible": false,
+                    positon: {
+                        ...center
+                    },
+                    hasImg: false,
+                    'zoom': zoom || 8.6,
+                }
+            })
+
     }
 
     defaultMarks(url) {
@@ -464,8 +680,8 @@ export default class Map_arcgis extends Component {
         return {
             type: 'picture-marker',
             url: url || '',
-            width: '45px',
-            height: '45px',
+            width: '68px',
+            height: '62px',
         };
     }
 
@@ -475,34 +691,47 @@ export default class Map_arcgis extends Component {
             switch (action) {
                 case 'mapclick':
                     console.log(data)
-                    if (data.map_layer) {
-
-                        this.state.handlers.onClick && this.state.handlers.onClick({...data.map_layer[0]});
+                    if(data.map_layer){
+                        this.state.handlers.onClick && this.state.handlers.onClick({type:'map_layer',...data.map_layer[0]});
+                    } else if (data.map_layer2) {
+                        this.state.handlers.onClick && this.state.handlers.onClick({type:'map_layer2',...data.map_layer2[0]});
+                    } else if (data.wangge && !data.map_area) {
+                        this.state.handlers.onClick && this.state.handlers.onClick({type:'wangge',...data.wangge[0]});
                     }
                     break;
             }
         });
     }
 
-    format = (num)=>{
-        let reg=/\d{1,3}(?=(\d{3})+$)/g;
+    format = (num) => {
+        let reg = /\d{1,3}(?=(\d{3})+$)/g;
         return (num + '').replace(reg, '$&,');
     }
-    createPopupTemplate = (ywc, wwc) => {
+    createPopupTemplate = (ywc, wwc, zywc, zwwc) => {
 
-        return `
-                <div  style="width:200px;height:100px;color:#94cfff;background:url(http://10.203.2.88:8090/fastdfs/20220316/c9d66de288bc1b422bc271cd8a43260a.png) no-repeat center center/100%;font-size:18px;font-weight: 600;">
-                    <div style="width:100%;height:50%;display:flex;">
-                        <span style="padding-left:20px;padding-top:13px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/a8a7024336c55ed925aa849a72e402c6.jpg) no-repeat 20px center;">已处理</span>
-                        <span style="padding-left:20px;padding-top:13px;color:#3BFEB2;width:50%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(ywc)}}</span>
+        return `  
+                <div  style="width:240px;height:137px;color:#94cfff;background:url(http://10.203.2.88:8090/fastdfs/20220316/c9d66de288bc1b422bc271cd8a43260a.png) no-repeat center center/100% 100%;font-size:16px;font-weight: 600;">
+                    <div style="width:100%;height:50%;">
+                        <div style="display:flex;">
+                            <span style="box-sizing:content-box;padding-left:10px;padding-top:16px;color:#fff;width:60%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/a8a7024336c55ed925aa849a72e402c6.jpg) no-repeat 26px 16px;height:24px;">历史已处理</span>
+                            <span style="box-sizing:content-box;padding-top:16px;padding-left:13px;color:#3BFEB2;width:40%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(zywc)}}</span>
+                        </div>
+                        <div style="font-size:14px;color:#59FFDE;font-weight: 400;">
+                            <span style="box-sizing:content-box;padding-left:60px;">今日已处理</span>
+                            <span>{${this.format(ywc)}}</span>
+                        </div>
                     </div>
-                    <div style="width:100%;height:50%;display:flex;justify-content: center;align-items: center;">
-                        <span style="padding-left:20px;padding-top:13px;color:#fff;width:55%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/c4757be50d5f61224fb858c5d68845e6.jpg) no-repeat 20px center;">未处理</span>
-                        <span style="padding-top:13px;color:#76B8FF;width:50%;padding-left:20px;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(wwc)}}</span>
+                    <div style="width:100%;height:50%;">
+                        <div style="display:flex;">
+                            <span style="box-sizing:content-box;padding-left:10px;padding-top:16px;color:#fff;width:60%;text-align: right;background:url(http://10.203.2.88:8090/fastdfs/20220321/c4757be50d5f61224fb858c5d68845e6.jpg) no-repeat 26px 16px;height:24px;">历史未处理</span>
+                            <span style="box-sizing:content-box;padding-top:16px;padding-left:13px;color:#76B8FF;width:40%;white-space: nowrap;overflow: hidden;text-overflow: ellipsis">{${this.format(zwwc)}}</span>
+                        </div>
+                        <div style="font-size:14px;color:#7AC3FF;font-weight: 400;">
+                            <span  style="box-sizing:content-box;padding-left:60px;">今日未处理</span>
+                            <span>{${this.format(wwc)}}</span>
+                        </div>
                     </div>
-                </div>
-`
-
+                </div>`
     }
 
     //删除撒点
@@ -526,7 +755,6 @@ export default class Map_arcgis extends Component {
         }
     }
 
-
     shouldComponentUpdate(nextProps, nextState) {
         const {dataProvider, style} = nextProps;
         console.info('bubble shouldComponentUpdate', nextProps, this.props);
@@ -536,13 +764,14 @@ export default class Map_arcgis extends Component {
             } else {
                 const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
 
-                this.setState({data: dataQuery}, () => {
+                this.setState({
+                    data: dataQuery
+                }, () => {
                     this.removeApoint();
-                    if (Array.isArray(this.state.data[0]?.result) && this.state.data[0]?.result.length !== 0) {
-                        this.setMarker();
-                    }
-
+                    this.setMarker();
                 });
+
+
             }
         }
 
@@ -550,16 +779,166 @@ export default class Map_arcgis extends Component {
 
     }
 
-    render() {
-        return (
-            <iframe
+    clickFunc = () => {
 
-                id={this.id}
-                className="mapiframe"
-                frameBorder="no"
-                scrolling="no"
-                allowTransparency="true">
-            </iframe>
+        let { render,center} = this.state;
+        this.setState({
+            opacity: !this.state.opacity
+        }, () => {
+            if (this.mapYear || this.state.opacity === false) {
+                this.clearWg(false);
+                if(render.length>0){
+                    this.clearWg(true,'', {x: render[0].lng || '', y: render[0].lat || ''}, 14)
+                }
+            }
+            if (this.state.opacity === true) {
+                console.log(this.state,2);
+                this.clearWg(true,'网格', center, 8.6, true)
+            }
+        })
+
+    }
+    clickhqwFunc=()=>{
+
+    }
+
+    ldllFunc=(id)=>{
+        let {ldllData=[]} = this.state;
+        let list = [...ldllData]
+        console.log('我执行了，李秋雨')
+        for(let i =0;i<list.length;i++){
+            if(list[i].id===id){
+
+                this.state.handlers.onClick && this.state.handlers.onClick({ldll_type:list[i].id,hot:!list[i].hot,});
+                this.createZzll(!list[i].hot,list[i].layer,list[i].id,list[i].color);
+                list[i].hot=!list[i].hot;
+            }else{
+                list[i].hot=false;
+                this.createZzll(list[i].hot,list[i].layer,list[i].id,list[i].color);
+            }
+        }
+
+        this.setState({
+            ldllData:[]
+        },()=>{
+            this.setState({
+                ldllData:list
+            })
+        })
+    }
+    //十六进制颜色转换
+    colorRgb(str, opacity) {
+        var sColor = str.toLowerCase();
+        if (sColor) {
+            if (sColor.length === 4) {
+                var sColorNew = "#";
+                for (var i = 1; i < 4; i += 1) {
+                    sColorNew += sColor.slice(i, i + 1).concat(sColor.slice(i, i + 1));
+                }
+                sColor = sColorNew;
+            }
+            //处理六位的颜色值
+            var sColorChange = [];
+            for (var i = 1; i < 7; i += 2) {
+                sColorChange.push(parseInt("0x" + sColor.slice(i, i + 2)));
+            }
+            return "rgba(" + sColorChange.join(",") + "," + opacity + ")";
+        } else {
+            return sColor;
+        }
+    };
+
+    createZzll(visible,name,id,color){
+        let map_color = this.colorRgb(color,0.4)
+        let outline = this.colorRgb(color,0.8)
+        this.bridge.Invoke({
+            "ActionName": "ShowData",
+            "Parameters": {
+                "name": 'car_'+id,
+                "type": "layer",
+                "visible":visible,
+                "isLocate": true,
+                "data": {
+                    "layers": {
+                        "name": name,
+
+                    }
+                },
+                // "isHighlight": true,
+                "legendVisible": false,
+                "popupEnabled": false,
+                "renderer": {
+                    "type": "simple",
+                    "symbol": {
+                        "type": "simple-fill",
+                        color:map_color|| [74, 232, 255, 0.4],
+                        style: 'solid',
+                        outline: {
+                            color: outline||[74, 232, 255, 0.8],
+                            width: 1
+                        }
+                    }
+                }
+
+            }
+        })
+    }
+    render() {
+
+        return (
+            <div style={{width: '100%', height: '100%', position: 'relative'}}>
+                <div onClick={this.clickFunc} style={{
+                    position: 'absolute',
+                    left: 2432,
+                    top: 426,
+                    opacity: this.state.opacity ? 1 : 0.7,
+                    cursor: 'pointer',
+                    width: 120,
+                    height: 44,
+                    background: `url(${wg1}) no-repeat center center/100% 100%`
+                }}>
+
+                </div>
+
+                <div className={styles.ldll_btn} style={{width:120,height:44,background:`url(${bgk}) no-repeat center center/100% 100%`,position: 'absolute',
+                    left: 2432,
+                    top: 486,
+                    fontSize:18,
+                    color:"#fff",
+                    cursor: 'pointer',
+                    lineHeight:'44px',
+                    textAlign:'center',
+                    }}>
+                    <div style={{width:'100%',height:'100%'}}>联动力量</div>
+                    <ul className={styles.ldll_btn_layer}>
+                        {
+                            this.state.ldllData.map(u=>{
+                                return (<li className={`${u.hot ? styles.hot : ''}`} onClick={()=>this.ldllFunc(u.id)}>{u.name}</li>)
+                            })
+                        }
+                    </ul>
+                </div>
+
+                {/*<div onClick={this.clickhqwFunc} style={{*/}
+                {/*    position: 'absolute',*/}
+                {/*    left: 2432,*/}
+                {/*    top: 500,*/}
+                {/*    opacity: opacity ? 1 : 0.7,*/}
+                {/*    width: 120,*/}
+                {/*    height: 44,*/}
+                {/*    background: `url(${hqw}) no-repeat center center/100% 100%`*/}
+                {/*}}>*/}
+
+                {/*</div>*/}
+                <iframe
+
+                    id={this.id}
+                    className="mapiframe"
+                    frameBorder="no"
+                    scrolling="no"
+                    allowTransparency="true">
+                </iframe>
+            </div>
         )
     }
 }

@@ -53,8 +53,8 @@ export default class Jin extends Component {
         // let data = this.state.data.sort((a, b) => {
         //     return b.type - a.type;
         // });
-        let value = this.state.data;
-        // let value = ["天气&汛情&空气质量&火警&安全生产&疫情防控&城管事件&地质灾害&城市内涝&森林防火",{"level":"黄色","description":"目前，襄阳市区及各县市大部地区仍有轻到中度、局部重度霾，预计未来24小时仍将持续，请注意防范。","time":"2022-01-19 14:24:43","type":"霾","department":"襄阳市气象台","class":"天气"},{"level":"橙色","description":"预计今天夜间到明天上午，襄阳市区及各县市（区）将出现能见度小于500米，局部小于100米的雾，请注意防范。","time":"2022-01-18 21:43:04","type":"大雾","department":"襄阳市气象台","class":"天气"},{"level":"黄色","description":"公众加强健康防护，结合实际情况可以采取部分临时管控措施或提前采取黄色预警响应措施。","time":"2022-01-19 13:00:00","type":"空气质量","department":"环保局","class":"空气质量"}]
+        // let value = this.state.data;
+        let value = ["天气&汛情&空气质量&火警&安全生产&疫情防控&城管事件&地质灾害&城市内涝&森林防火",{"level":"黄色","description":"目前，襄阳市区及各县市大部地区仍有轻到中度、局部重度霾，预计未来24小时仍将持续，请注意防范。","time":"2022-01-19 14:24:43","type":"霾","department":"襄阳市气象台","class":"天气"},{"level":"橙色","description":"预计今天夜间到明天上午，襄阳市区及各县市（区）将出现能见度小于500米，局部小于100米的雾，请注意防范。","time":"2022-01-18 21:43:04","type":"大雾","department":"襄阳市气象台","class":"天气"},{"level":"黄色","description":"公众加强健康防护，结合实际情况可以采取部分临时管控措施或提前采取黄色预警响应措施。","time":"2022-01-19 13:00:00","type":"空气质量","department":"环保局","class":"空气质量"}]
         let data, names;
         if (typeof value[0] == 'object') {
             names = []

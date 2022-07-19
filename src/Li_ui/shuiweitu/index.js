@@ -33,6 +33,8 @@ export default class Jindu extends Component {
     * 严重 #b61f7e 182,31,126
     * */
     // //绘图
+
+
     setEcharts = () => {
         //默认拿第一个
         this.myChart = echarts.init(this.node);
@@ -46,7 +48,7 @@ export default class Jindu extends Component {
             type: 0,//0-5 0 为 优  良 轻度 中度 重度 严重 6重要水质达标率 7湿度
             widthString: '400px' , // 宽度,
             text: '50%', //显示文本
-            color:'',//传入颜色 必须是#000000格式
+            // color:'',//传入颜色 必须是#000000格式
             fontSize: '48px',//文本字号
             mainTitle:'湿度',
             mainTitleSize:'48px',//主标题字号

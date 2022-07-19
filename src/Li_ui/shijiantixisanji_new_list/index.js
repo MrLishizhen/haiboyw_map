@@ -19,7 +19,7 @@ const Item_li = (props) => {
                     <td style={{width:140}}>紧急程度</td>
                 </tr>
                 <tr className={styles.tr_color_td}>
-                    <td  title={obj.czsx||''}>{obj.czsx||''}</td>
+                    <td  title={obj.czsx||''}>{obj.czsx+'分钟'||''}</td>
                     <td  title={obj.jasx||''}>{obj.jasx||''}</td>
                     <td  title={obj.czll||''}>{obj.czll||''}</td>
                     <td  title={obj.zt||''}>{obj.zt||''}</td>

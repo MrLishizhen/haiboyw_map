@@ -45,7 +45,7 @@ export default class Jindu extends Component {
             },
 
             checkData: dataQuery[1] || {
-                timeOut: true,//超时
+                timeOut: false,//超时
                 disposedOf: false,//已处置
                 underDisposal: false,//处置中
             }
@@ -79,7 +79,7 @@ export default class Jindu extends Component {
                 //初始化
                 this.setAfterFunc({
                     checkData: this.props.dataProvider[1]||{
-                        timeOut: true,
+                        timeOut: false,
                         disposedOf: false,
                         underDisposal: false,
                     }
@@ -141,7 +141,7 @@ export default class Jindu extends Component {
 
                 this.setState({
                     data: dataQuery[0]||{}, checkData: dataQuery[1] || {
-                        timeOut: true,//超时
+                        timeOut: false,//超时
                         disposedOf: false,//已处置
                         underDisposal: false,//处置中
                     }

@@ -441,10 +441,15 @@
           font-size:16px;
           background-color:rgba(109, 154, 255, 0.25);
           border-color:transparent;
-          width:28px;
+          //width:28px;
+          padding:0 8px;
           height:28px;
           min-width: 28px;
           line-height:28px;
+          &.ant-pagination-jump-next-custom-icon.ant-pagination-jump-next,&.ant-pagination-jump-prev.ant-pagination-jump-prev-custom-icon{
+            width:28px;
+            padding:0;
+          }
           &.ant-pagination-item-active{
             a{
               color:#fff;

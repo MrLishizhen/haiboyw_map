@@ -39,9 +39,11 @@ const FormItem = props => {
     )
 }
 
+
+
 const CustomForm = props => {
     const {
-        data = {}
+        data = {},clickHand
     } = props;
     const {
         flowSource = "",
@@ -65,6 +67,13 @@ const CustomForm = props => {
         chuzhirenyuan='',
         chuzhirenPhone=''
     } = data || {};
+
+
+    let clickFunc = (val)=>{
+        // console.log(val,12354)
+        clickHand(val)
+    }
+
     return (
         <>
             {/** reportDate*/}
@@ -126,7 +135,7 @@ const CustomForm = props => {
                 <div style={{width: '50%'}}>
                     <FormItem title={'处置人员'} value={chuzhirenyuan}/>
                 </div>
-                <div style={{width: '50%',marginLeft:39}}>
+                <div style={{width: '50%',marginLeft:39,cursor:'pointer'}} title={'点击拨打电话'} onClick={()=>clickFunc(chuzhirenPhone)}>
                     <FormItem title={'人员电话'} value={chuzhirenPhone}/>
                 </div>
             </div>
@@ -272,7 +281,12 @@ class index extends Component {
             handlers: Object.assign({}, eventValue)
         });
     }
+    clickHandlers(val){
+        if(val){
+            this.state.handlers.onClick && this.state.handlers.onClick({phone:val})
+        }
 
+    }
     getPics = (el = {}) => {
         let list = [];
         try {
@@ -396,7 +410,7 @@ class index extends Component {
                        {/*    style = {{background: `url(${zhihui})`, width: 324, height: 106, position: 'absolute', right: 70, top: 52, cursor: 'pointer'}}></div>*/}
                    </div>
                    <div style={{ width: '705px',paddingTop:'126px',margin:'30px auto 0'}}>
-                       <CustomForm data={details}/>
+                       <CustomForm clickHand={(val)=>this.clickHandlers(val)} data={details}/>
                    </div>
 
                    <div style={{ width: '705px',margin:'30px auto 0'}}>

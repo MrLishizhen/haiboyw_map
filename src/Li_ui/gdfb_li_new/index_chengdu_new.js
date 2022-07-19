@@ -3,7 +3,7 @@ import * as echarts from 'echarts';
 import {isEqual} from "lodash";
 import styles from './index_new.less'
 
-import 'swiper/dist/css/swiper.css';
+// import 'swiper/dist/css/swiper.css';
 import zx from './img/zx.png'
 
 export default class index extends Component {
@@ -130,15 +130,17 @@ export default class index extends Component {
                 if(dataQuery.length>9){
                     newData.push(...newData.slice(0, 3));
                 }
+                if (this.setIntervalfunc) {
+                    clearInterval(this.setIntervalfunc);
+                    this.setIntervalfunc = null;
+                    this.swiperRef.current.style.transitionDuration= `0s`
+                    this.swiperRef.current.style.transform=`translateY(0px)`
 
+                }
                 this.setState({
-                    data: dataQuery, newData: newData,fIndex:fIndex
+                    data: dataQuery, newData: newData,fIndex:fIndex,sdIndex:0
                 }, () => {
-                    if (this.setIntervalfunc) {
-                        clearInterval(this.setIntervalfunc);
-                        this.setIntervalfunc = null;
 
-                    }
                     this.generateSwiper();
                 });
             }
@@ -223,7 +225,7 @@ export default class index extends Component {
                                         </div>
                                     )
                                 })
-                                return (<div className={'swiper-slide'} key={index.toString()} style={{
+                                return (<div key={index.toString()} style={{
                                     width: '100%',
                                     height: 160,
                                     display: 'flex',

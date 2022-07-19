@@ -45,7 +45,7 @@ export default class Index extends PureComponent {
     axios.post(
       // window.origin === 'http://localhost:8080' ?
       // 'http://119.3.53.170:9527/userOrg/api/org/login' :
-      'http://10.7.52.21:9527/userOrg/api/org/login', params)
+      'http://10.203.4.224:9527/userOrg/api/org/login', params)
       .then(({ data: res }) => {
         if (res && res.code === '0000') {
           this.token = res.data.token;
@@ -78,7 +78,7 @@ export default class Index extends PureComponent {
     axios.post(
       // window.origin === 'http://localhost:8080' ?
       //   'http://119.3.53.170:9527/userOrg/api/org/login' :
-      'http://10.7.52.21:9527/itsmApp/visData/getFlowLogVis', params, {
+      'http://10.203.4.224:9527/itsmApp/visData/getFlowLogVis', params, {
       headers: {
         token: this.token
       }
@@ -102,7 +102,7 @@ export default class Index extends PureComponent {
     axios.post(
       // window.origin === 'http://localhost:8080' ?
       //   'http://119.3.53.170:9527/userOrg/api/org/login' :
-      'http://10.7.52.21:9527/itsmApp/visData/getFlowInfoVis', params, {
+      'http://10.203.4.224:9527/itsmApp/visData/getFlowInfoVis', params, {
       headers: {
         checkToken: 'no'
       }
@@ -145,7 +145,7 @@ export default class Index extends PureComponent {
         //拼接图片url
         if (detail.upPicture instanceof Array) {
           detail.upPicture = detail.upPicture.map(item => {
-            item.downloadPath = `http://10.7.52.21:9527/itsmApp${item.downloadPath}`;
+            item.downloadPath = `http://10.203.4.224:9527/itsmApp${item.downloadPath}`;
             return item;
           })
         }

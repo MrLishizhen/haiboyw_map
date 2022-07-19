@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>详情框</title>
+    <style>
+        .model_box {
+            /* width: 780px;
+            height: 580px; */
+            width: 100%;
+            height: 100%;
+            position: relative;
+            /* border-radius: 25px !important; */
+
+            /* box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .2); */
+
+            cursor: default;
+
+            background: linear-gradient(0deg, #246495 0%, #00295B 100%);
+            box-shadow: 0px 10px 10px 10px rgba(3, 32, 79, 0.41);
+
+            /* background-color: #fff; */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            margin: 0;
+            border-width: 0px;
+            border-color: #606266;
+            border-style: solid;
+            /* background: #fff; */
+            padding: 1.04167vw 1vw;
+            overflow: hidden;
+        }
+
+        .model_box p {
+            text-align: center;
+            font-size: 6.45833vw;
+            color: #606266;
+            margin: 0 0 0.52083vw 0;
+        }
+
+        .table_div {
+            overflow-y: hidden;
+            height: inherit;
+            height: 500px;
+            width: 780px;
+            position: absolute;
+            top: 100px;
+            left: 40px
+        }
+
+        .model_box>div table {
+            width: 100%;
+            margin: auto;
+            text-align: center;
+            table-layout: fixed;
+        }
+
+        .model_box>div table tr:hover {
+            background-color: #ebeef500;
+        }
+
+        .model_box>div table tr td:nth-child(1) {
+            color: #00C2FF;
+            font-family: youyuan;
+            font-size: 0.9375vw;
+            text-align: left;
+            width: 30%;
+            font-size: 40px;
+            padding-left: 20px;
+            white-space:nowrap;/* 规定文本是否折行 */  
+            overflow: hidden;/* 规定超出内容宽度的元素隐藏 */
+            text-overflow: ellipsis;
+        }
+
+        .model_box>div table tr td:nth-child(2) {
+            color: white;
+            font-family: youyuan;
+            font-size: 0.9375vw;
+            text-indent: 1em;
+            text-align: left;
+            width: 50%;
+            font-size: 40px;
+            white-space:nowrap;/* 规定文本是否折行 */  
+            overflow: hidden;/* 规定超出内容宽度的元素隐藏 */
+            text-overflow: ellipsis;
+        }
+
+        .model_box>div table tr td {
+            border-bottom: 0.05208vw dashed #60626600;
+            line-height: 2;
+            transition: all 1s;
+        }
+
+        .icon-close {
+            float: right;
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            fill: #606266;
+        }
+
+        .icon-close:hover {
+            fill: #579afc;
+        }
+
+        ::-webkit-scrollbar {
+            /*滚动条整体样式*/
+            width: 6px !important;
+            /*高宽分别对应横竖滚动条的尺寸*/
+            height: 6px !important;
+            background: #ffffff !important;
+            cursor: pointer !important;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            /*滚动条里面小方块*/
+            border-radius: 5px !important;
+            -webkit-box-shadow: inset 0 0 5px rgba(240, 240, 240, 0.5) !important;
+            background: rgba(63, 98, 131, 0.8) !important;
+            cursor: pointer !important;
+        }
+
+        ::-webkit-scrollbar-track {
+            /*滚动条里面轨道*/
+            -webkit-box-shadow: inset 0 0 5px rgba(240, 240, 240, 0.5) !important;
+            border-radius: 0 !important;
+            background: rgba(240, 240, 240, 0.5) !important;
+            cursor: pointer !important;
+        }
+
+       
+    </style>
+
+    <script>
+
+        (function () {
+            window.addEventListener("message", init, false);
+        })();
+
+        const noVisibleFields = ['x', 'y', 'oid', 'icon'];
+
+        // setTimeout(() => {
+        //   init({data: {
+        //     "拥堵路段": "少时诵诗书所所所所所111",
+        //     "拥堵距离": "少时诵诗书所所所所所1212312312",
+        //     "当前时速": "少时诵诗书所所所所所1212",
+        //     "拥堵时长": "少时诵诗书所所所所所1212",
+        //     "拥堵状态": "少时诵诗书所所所所所1212",
+        //     "开始时间": "少时诵诗书所所所所所1212"
+        //   }})
+        // }, 200);
+        
+        function init({ data }) {
+            data = typeof data == "string" ? JSON.parse(data) : data;
+            for (const noVisibleField of noVisibleFields) {
+                // 删除无用字段
+                delete data[noVisibleField];
+            }
+
+
+            const keys = Object.keys(data);
+
+            for (let i = 0; i < keys.length; i++) {
+              const key = keys[i];
+              const value = data[key] || '';
+              createNode(`${key}:`, value);
+              
+            }
+
+        }
+        function createNode(key, value) {
+            const table = document.getElementById("infoTable");
+            const tr = document.createElement("tr");
+            const keyTd = document.createElement("td");
+            const valueTd = document.createElement("td");
+            const keyText = document.createTextNode(key);
+            const valueText = document.createTextNode(value);
+
+
+            keyTd.setAttribute("title", key);
+            valueTd.setAttribute("title", value);
+
+            keyTd.appendChild(keyText);
+            valueTd.appendChild(valueText);
+
+            tr.appendChild(keyTd);
+            tr.appendChild(valueTd);
+
+            table.appendChild(tr);
+        }
+
+
+        // 关闭弹窗
+        function boxClose() {
+            window.removeEventListener("message", init, false);
+                window.parent.postMessage(JSON.stringify({
+                    ActionName: "userPopup",
+                    Parameters: {
+                        action: "close"
+                    }
+                }));
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <div style="width: 780px;height: 600px;">  -->
+      <div class="model_box">
+        <?xml version="1.0" encoding="UTF-8"?>
+        <svg width="1200px" height="640px" viewBox="0 0 1200 640" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <title>弹窗</title>
+            <defs>
+                <polygon id="path-1" points="4.54851895e-12 0 1200 -7.95807864e-12 1200 640 4.54851895e-12 640"></polygon>
+                <filter x="-1.7%" y="-3.1%" width="103.3%" height="106.2%" filterUnits="objectBoundingBox" id="filter-2">
+                    <feGaussianBlur stdDeviation="20" in="SourceAlpha" result="shadowBlurInner1"></feGaussianBlur>
+                    <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+                    <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+                    <feColorMatrix values="0 0 0 0 0.414279845   0 0 0 0 0.638789838   0 0 0 0 1  0 0 0 0.800670277 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+                </filter>
+            </defs>
+            <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g id="22.4.15备份--事件来源弹窗" transform="translate(-1350.000000, -270.000000)">
+                    <g id="矩形" transform="translate(1350.000000, 270.000000)">
+                        <use fill-opacity="0.904099684" fill="#081C3F" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <div style="font-size: 40px; color: white;position: absolute;top: 40px;left: 60px;">拥堵详情</div>
+        <div class="table_div">
+            <table cellspacing="0" rules="none;" id="infoTable"></table>
+        </div>
+        </table>
+      </div>
+
+    <!-- </div> -->
+   
+</body>
+
+</html>

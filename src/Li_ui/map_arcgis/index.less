@@ -1,0 +1,46 @@
+*{
+  padding:0;
+  margin:0;
+}
+ul,li{
+  list-style: none;
+}
+.ldll_btn{
+  &:hover .ldll_btn_layer{
+    display:block;
+  }
+  .ldll_btn_layer{
+    transition:all 2s ;
+    display:none;
+    position: absolute;
+    left:-120px;
+    top:0;
+    width:120px;
+    padding:5px 0;
+    background-color:rgba(67,109,182,.8);
+    border-radius:12px;
+    overflow:hidden;
+
+    li{
+      cursor: pointer;
+      width:100%;
+      height:32px;
+      line-height:32px;
+      text-align: center;
+      color:#fff;
+      margin-bottom:5px;
+      &:last-child{
+        margin:0;
+      }
+      &:hover{
+        background-color: rgba(67,109,182,1);
+        //color:rgb(102, 212, 255);
+      }
+    }
+    .hot{
+      font-weight: 600;
+      background-color: rgba(67,109,182,1);
+      color:rgb(102, 212, 255);
+    }
+  }
+}

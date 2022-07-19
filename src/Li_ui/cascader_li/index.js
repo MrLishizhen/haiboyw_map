@@ -16,7 +16,7 @@ export default class Jindu extends Component {
         const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
 
         this.state = {
-            // data: dataQuery,
+            data: dataQuery,
             // data:[{"label":"2022",value:'2022',hot:false,fid:0},{fid:0,"label":"2021",value:"2021",hot:true},{fid:0,"label":"2020",value:"2020",hot:false}]
             // data:  [
             //     {
@@ -146,7 +146,10 @@ export default class Jindu extends Component {
             } else {
                 const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
                 // this.selectHot(dataQuery);
-                this.setState({data: dataQuery}, () => {});
+                this.setState({data: dataQuery}, () => {
+                    // let value = this.selectHot(dataQuery);
+                    // this.handleChange(value)
+                });
             }
         }
 
@@ -207,7 +210,7 @@ export default class Jindu extends Component {
     render() {
         let {data=[]} = this.state;
         let hot = this.selectHot(data).reverse();
-        console.log(hot)
+
         return (
             <div ref={node => this.node = node} className={styles.box}>
                 {

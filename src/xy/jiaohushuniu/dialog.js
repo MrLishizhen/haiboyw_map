@@ -260,7 +260,7 @@ class ImgItem extends PureComponent {
       <Fragment>
         <div style={style}>
           {data && data.length > 1 && <div className={[styles.list_btn, styles.prev].join(' ')} onClick={this.onChange.bind(this, 'prev')} />}
-          <img className='img_item' src={data[current]?.downloadPath} style={{ maxWidth: '100%' }} onClick={this.onClick.bind(this)} />
+          <img className='img_item' src={data[current]?.downloadPath} style={{ maxWidth: '100%',maxHeight:(window.innerHeight-100)||980+'px' }} onClick={this.onClick.bind(this)} />
           {data && data.length > 1 && <div className={[styles.list_btn, styles.next].join(' ')} onClick={this.onChange.bind(this, 'next')} />}
         </div>
       </Fragment>
