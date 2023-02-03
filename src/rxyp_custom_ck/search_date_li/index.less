@@ -1,0 +1,186 @@
+.riqikuang{
+  height: 80px;
+  width: 640px;
+  background-size: 100% 100%;
+  //float: left;
+  //margin-top: 62px;
+  //margin-left: 70px;
+  :global{
+    .ant-calendar-picker{
+      width: 100% !important;
+      background-color: #1B6298;
+      border-radius: 50px;
+    }
+    .ant-calendar-range-picker-input{
+      &::placeholder{
+        color:#91D4FF;
+        font-size:48px;
+      }
+    }
+
+    .ant-input{
+      height: 80px !important;
+      background-color: #fff0;
+      border: 1px solid #ccc0;
+      font-size: 48px;
+      color: #91D4FF;
+      padding-left: 25px;
+    }
+    .ant-calendar-picker-icon{
+      display: none;
+    }
+    .ant-calendar-picker-clear{
+      display: none;
+      top: 40%;
+      right: 50px;
+      width: 40px;
+      height: 40px;
+      background: #ccc0;
+      font-size: 32px !important;
+    }
+    .ant-calendar-range-picker-separator{
+      //margin-top: 15px;
+      color: #78B4F8;
+    }
+  }
+}
+.date_picker {
+  * {
+    font-size: 38px;
+  }
+
+  :global {
+    .ant-calendar {
+      width: 1000px;
+    }
+    .ant-calendar-month .ant-calendar-month-header-wrap {
+      width: 500px;
+      height: 500px;
+    }
+
+    .ant-calendar-month-panel-header {
+      height: 80px;
+      line-height: 80px;
+    }
+    .ant-calendar-year-panel-next-decade-btn,
+    .ant-calendar-year-panel-prev-decade-btn,
+    .ant-calendar-next-year-btn,
+    .ant-calendar-next-month-btn,
+    .ant-calendar-prev-month-btn,
+    .ant-calendar-prev-year-btn,
+    .ant-calendar-month-panel-next-year-btn,
+    .ant-calendar-month-panel-prev-year-btn {
+      line-height: 80px !important;
+    }
+    .ant-calendar-prev-month-btn {
+      left: 40px !important;
+    }
+    .ant-calendar-next-month-btn {
+      right: 40px !important;
+    }
+    .ant-calendar-year-panel-next-decade-btn::after,
+    .ant-calendar-year-panel-prev-decade-btn::after,
+    .ant-calendar-next-year-btn::after,
+    .ant-calendar-next-month-btn::after,
+    .ant-calendar-prev-month-btn::after,
+    .ant-calendar-prev-year-btn::after,
+    .ant-calendar-month-panel-next-year-btn::after,
+    .ant-calendar-month-panel-prev-year-btn::after {
+      width: 16px !important;
+      height: 16px !important;
+      border-width: 3px 0 0 3px !important;
+    }
+    .ant-calendar-year-panel-next-decade-btn::before,
+    .ant-calendar-year-panel-prev-decade-btn::before,
+    .ant-calendar-next-year-btn::before,
+    .ant-calendar-next-month-btn::before,
+    .ant-calendar-prev-month-btn::before,
+    .ant-calendar-prev-year-btn::before,
+    .ant-calendar-month-panel-next-year-btn::before,
+    .ant-calendar-month-panel-prev-year-btn::before {
+      width: 16px !important;
+      height: 16px !important;
+      border-width: 3px 0 0 3px !important;
+    }
+    .ant-calendar-month-panel-month {
+      height: 80px;
+      line-height: 80px;
+    }
+    .ant-calendar-time, .ant-calendar-panel, .ant-calendar-month-calendar-content {
+      .ant-calendar-input-wrap {
+        height: 80px;
+        line-height: 40px;
+        .ant-calendar-input {
+          height: auto;
+        }
+      }
+      .ant-calendar-date-panel {
+        .ant-calendar-input  {
+          font-size: 36px;
+        }
+        .ant-calendar-range-middle {
+          line-height: 60px;
+        }
+        .ant-calendar-time-picker-combobox {
+          li {
+            font-size: 36px;
+            height: 40px;
+            line-height: 40px;
+          }
+        }
+      }
+      .ant-calendar-footer-btn {
+        padding: 10px;
+        .ant-calendar-time-picker-btn {
+          font-size: 36px;
+        }
+        .ant-calendar-ok-btn {
+          height: 50px;
+          width: 100px;
+          font-size: 32px;
+          line-height: 50px;
+        }
+      }
+
+
+      .ant-calendar-header {
+        height: 80px;
+        line-height: 80px;
+      }
+      .ant-calendar-year-panel {
+        .ant-calendar-year-panel-header {
+          height: 80px;
+          line-height: 80px;
+        }
+        .ant-calendar-year-panel-year {
+          height: 80px;
+          line-height: 80px;
+        }
+      }
+      .ant-calendar-body {
+        .ant-calendar-column-header {
+          line-height: 80px;
+        }
+        .ant-calendar-cell {
+          line-height: 48px;
+          .ant-calendar-date {
+            font-size: 36px;
+            width: auto;
+            height: 60px;
+            line-height: 48px;
+          }
+        }
+      }
+      .ant-calendar-decade-panel {
+        .ant-calendar-decade-panel-decade {
+          font-size: 32px;
+          height: 80px;
+          line-height: 80px;
+        }
+      }
+      .ant-calendar-footer {
+        line-height: 60px;
+      }
+    }
+  }
+}

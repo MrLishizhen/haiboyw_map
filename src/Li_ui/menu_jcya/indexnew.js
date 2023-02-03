@@ -12,8 +12,8 @@ export default class Menu_jcya extends Component {
         const dataQuery = Array.isArray(dataProvider) && dataProvider.length > 0 ? dataProvider : [];
 
         this.state = {
-            data: dataQuery,
-            // data:data,
+            // data: dataQuery,
+            data:data,
             hotItem:{},
         }
     }

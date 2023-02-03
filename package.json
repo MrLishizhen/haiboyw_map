@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "data": {
-    "widgetName": "_xy_event_info_list"
+    "widgetName": "heighthappenaxis_li"
   },
   "scripts": {
     "dev": "npm run development",
@@ -24,8 +24,9 @@
     "cross-env": "^7.0.2",
     "css-loader": "^3.0.0",
     "echarts": "^5.2.1",
+    "echarts-gl": "^2.0.9",
     "echarts-liquidfill": "^3.1.0",
-    "echarts-wordcloud": "^2.0.0",
+    "echarts-wordcloud": "^2.1.0",
     "element-resize-detector": "^1.1.15",
     "esri-loader": "^2.16.0",
     "gsap": "^2.1.3",

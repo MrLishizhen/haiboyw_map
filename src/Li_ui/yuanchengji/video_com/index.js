@@ -80,8 +80,7 @@ export default class Five_system extends Component {
                 // this.setState({
                 //     ifRameSrc: data.data
                 // })
-                window.open(data.data)
-
+                console.log(data.data, 1)
                 if (data.data != '') {
                     // console.log(data.data)
                     // window.open(data.data)
@@ -171,7 +170,7 @@ export default class Five_system extends Component {
                 // filter: 'blur(4px)'
             }}>
                 {
-                    ifRameSrc ? <iframe allow="microphone;camera;" src={ifRameSrc} style={{ width: '100%', height: '100%' }} frameborder='0' scrolling='no'></iframe> : <div style={{ color: "#fff", fontSize: 18 }}>{ifRameText}</div>
+                    ifRameSrc ? <iframe allow="microphone;camera;midi;encrypted-media;" src={ifRameSrc} style={{ width: '100%', height: '100%' }} frameborder='0' scrolling='no'></iframe> : <div style={{ color: "#fff", fontSize: 18 }}>{ifRameText}</div>
                 }
             </div>
         )

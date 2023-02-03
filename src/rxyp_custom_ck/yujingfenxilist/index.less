@@ -1,0 +1,133 @@
+.yjfxList{
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+
+
+    :global{
+        .ant-descriptions-item-colon::after{
+            content: none;
+        }
+
+    }
+    .openlist{
+        width:100%;
+        flex-grow: 1;
+        // background-color: red;
+        overflow-y: auto;
+    }
+    .seeall{
+        flex-shrink: 0;
+        display:flex;
+        width: 100%;
+        height: 192px;
+        margin-bottom: 66px;
+
+    }
+    .seelist{
+        cursor: pointer;
+        text-align: center;
+        // line-height: 236px;
+        opacity:0.39;
+        width: 280px;
+        height: 192px;
+        margin-left:64px;
+        background: url(./img/smabg_no.png) no-repeat center center/100% 100%;
+        &:first-child{
+            margin-left:30px;
+        }
+        &.hot{
+            opacity:1;
+            background: url(./img/smabg.png) no-repeat center center/100% 100%;
+        }
+        h4{
+            margin: 0px;
+            color: #78F7FF;
+            font-size: 70px;
+        }
+        h5{
+            margin: 0px;
+            color: #FFFFFF;
+            font-size: 40px;
+        }
+    }
+    .arrlist{
+        width: 100%;
+        height: 300px;
+        //margin: 20px 0px;
+        margin-bottom: 28px;
+        background: url(./img/bg.png) no-repeat center center/100% 100%;
+        .onelist{
+            :global{
+                .ant-descriptions-view > table{
+                        margin-top: 10px;
+                }
+                .ant-descriptions-row{
+                    text-align: center;
+                    &:first-child>.ant-descriptions-item:first-child {
+
+                        text-align: left;
+                        &>.ant-descriptions-item-label{
+                            padding-left:50px;
+                            font-weight: 600;
+                        }
+                    }
+                }
+                .ant-descriptions-item-label{
+                    color:#FFFFFF;
+                    font-size: 36px;
+                    font-weight: 600;
+                }
+                .ant-descriptions-item-content{
+                    color:#AED4FF;
+                    font-size: 36px;
+                }
+            }
+        }
+        .twolist{
+            padding:0 27px;
+            :global{
+                .ant-descriptions-item{
+                    padding: 0px;
+                    height: 60px;
+                    line-height: 1;
+                    display: flex;
+                    margin-top: 6px;
+                }
+                .ant-descriptions-item-label{
+                    color:#FFFFFF;
+                    //margin: 0px 40px;
+                    width:170px;
+                    text-align: right;
+                    font-size: 36px;
+                    flex-shrink: 0;
+                    font-weight: 600;
+                }
+                .ant-descriptions-item-content{
+                    color:#AED4FF;
+                    font-size: 36px;
+                    height: 60px;
+                    //width: 1546px;
+                    overflow: hidden;
+                    margin: 0px 0px 0px 56px;
+
+                }
+
+            }
+        }
+
+    }
+
+
+
+}
+.ant_tooltip {
+    :global {
+      .ant-tooltip-inner {
+        font-size: 42px;
+        width:500%;
+        text-align: left;
+      }
+    }
+  }

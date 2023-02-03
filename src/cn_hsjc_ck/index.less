@@ -1,0 +1,161 @@
+.MaxBox{
+    overflow: hidden;
+    height: 600px;
+
+    width:1200px;
+    :global {
+        .ant-table-scroll > .ant-table-body{
+            background-color: rgba(0,0,0,0) !important;
+            padding-top: 0px;
+        }
+        .ant-table-header{
+            overflow:auto !important;
+            background: #0F2A59;
+            // padding-bottom:16px !important;
+        }
+        .ant-table-fixed{
+            background: #0F2A59;
+        }
+        .ant-table-thead > tr >th{
+            // font-size: 80px;
+            font-size: 66px;
+            font-weight: 700;
+            text-align: center;
+            background: #0F2A59;
+            border-bottom: 1px solid #8AC6FF;
+            // border-bottom:none !important;
+        }
+        .ant-table-thead > tr > th .anticon-filter > svg, .ant-table-thead > tr > th .ant-table-filter-icon > svg{
+            top: 38% !important;
+        }
+
+        .ant-table-column-title{
+            color: #8AC6FF;
+        }
+        .ant-table-body{
+            // margin-top: 15px;
+        }
+        .ant-table-body{
+            // max-height: 1323px !important;
+            max-height: 1188px !important;
+        }
+        .ant-table-tbody{
+            font-size: 68px;
+            // line-height: 84px;
+            line-height: 88px;
+            color: #ffffff;
+            // color: #8AC6FF;
+            text-align: center;
+            background-color: rgba(0,0,0,0);
+            overflow-y: auto;
+        }
+        .ant-table-tbody > tr > td{
+            // border-bottom: 1px solid #8AC6FF;
+            border-bottom: none;
+        }
+        .ant-table-tbody > tr:hover:not(.ant-table-expanded-row):not(.ant-table-row-selected) > td{
+            background-color: rgba(0,0,0,0);
+        }
+        .ant-table-header{
+            background-color:rgba(0,0,0,0)
+        }
+
+        .ant-table-header::-webkit-scrollbar {
+            width: 1px !important;
+            height: 1px !important;
+          }
+
+        .ant-table-body::-webkit-scrollbar {
+            width: 1px !important;
+            height: 36px !important;
+          }
+          .ant-table-body-inner::-webkit-scrollbar {
+            width: 1px !important;
+            // height: 36px !important;
+          }
+
+          .ant-table-body::-webkit-scrollbar-thumb {
+            border-radius: 10px !important;
+            box-shadow: inset 0 0 5px rgb(24, 144, 255) !important;
+            background: rgba(0,0,0,0.2) !important;
+            // margin-top: 200px !important;
+          }
+          .ant-table-body::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2) !important;
+            border-radius: 0 !important;
+            background: rgba(0,0,0,0) !important;
+          }
+        .ant-dropdown > .ant-table-filter-dropdown > .ant-table-filter-dropdown .ant-dropdown-menu{
+            height: 2040px !important;
+        }
+
+        .jiange{
+            text-align: justify;
+            // color:chartreuse;
+            letter-spacing: 2em;
+        }
+
+    }
+}
+
+.ant_tooltip {
+    :global {
+      .ant-tooltip-inner {
+        font-size: 64px;
+        width:400%;
+        text-align: left;
+      }
+    }
+  }
+
+
+
+  :global(.ant-table-filter-dropdown .ant-dropdown-menu){
+    max-height: 2040px !important;
+    width: 300px ;
+    background: #0F2A59;
+    // font-size: 48px;
+        :global{
+            .ant-checkbox-wrapper{
+                font-size: 58px !important;
+                }
+            }
+    :global {
+    .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title{
+        font-size: 58px;
+        line-height: 58px;
+        background: #0F2A59;
+        // color: white;
+    }
+    }
+    :global {
+        .ant-checkbox-inner{
+            background: #0F2A59;
+        }
+        }
+    :global {
+        .ant-dropdown-menu-item, .ant-dropdown-menu-submenu-title{
+            font-size: 58px;
+            line-height: 58px;
+            color:rgba(255, 255, 255, 1)
+        }
+    }
+    :global {
+        .ant-dropdown-menu-item-selected, .ant-dropdown-menu-submenu-title-selected, .ant-dropdown-menu-item-selected > a, .ant-dropdown-menu-submenu-title-selected > a{
+            font-size: 58px;
+            line-height: 58px;
+            color:#1890ff
+        }
+    }
+
+}
+:global(.ant-table-filter-dropdown-btns){
+    font-size: 58px;
+    background: #0F2A59;
+    border-top:none
+}
+.jiange{
+    text-align-last: justify;
+    display: inline-block;
+    // color:chartreuse;
+}

@@ -1,0 +1,38 @@
+.tab_box{
+  width:5254px;
+  height:184px;
+  background:url(./img/tab_bg.png) no-repeat center center/100% 100%;
+  display:flex;
+  justify-content: center;
+  .tab{
+    //width:1140px;
+    height:100%;
+    display:flex;
+    justify-content: space-between;
+    //justify-content: center;
+    .tab_item{
+      cursor: pointer;
+      text-align: center;
+      width:348px;
+      height:100%;
+      font-size:64px;
+      line-height:130px;
+      color: #316EBE;
+      font-family: MFBanHei_Noncommercial-Regular, MFBanHei_Noncommercial;
+      font-weight: 600;
+      &:nth-child(2){
+        margin:0 100px;
+      }
+      &.hot{
+        background:url(./img/tab.png) no-repeat center bottom;
+        background-clip:content-box;
+      }
+      &.hot span{
+        color: #FFFFFF;
+        background: linear-gradient(180deg, #FFFFFF 0%, #64B9FF 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

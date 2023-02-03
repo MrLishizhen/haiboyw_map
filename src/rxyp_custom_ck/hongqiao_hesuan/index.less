@@ -1,0 +1,383 @@
+.borderCss{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  .frame{
+    width: 3100px;
+    height: 1570px;
+  }
+  .selectFrameRow{
+    height: 214px;
+    width: 3100px;
+    :global{
+      .ant-input{
+        height: 88px;
+        font-size: 30px;
+        padding-left: 25px;
+        color: #78B4F8;
+      }
+    }
+  }
+  .divCss{
+    height: 100%;
+    width: 400px;
+    margin-left: 80px;
+    float: left;
+  }
+  .selectCss{
+    width: 400px;
+    margin-top: 62px;
+    // margin-left: 80px;
+    :global{
+      .ant-select-selection--single{
+        height: 88px !important;
+        background-color: #033A70;
+        border-radius: 50px;
+      }
+      .ant-select-selection__rendered{
+        line-height: 88px;
+        font-size: 32px;
+        color: #78B4F8;
+      }
+      .ant-select-selection-selected-value{
+        padding-left: 30px;
+      }
+      .ant-select-arrow{
+        font-size: 28px;
+        color: #d9d9d9;
+        padding-right: 10px;
+        margin-top: -10px;
+      }
+      .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+        height: 50px;
+        color: #d9d9d9;
+        line-height: 50px;
+        margin-top: -27px;
+        padding-left: 20px;
+      }
+    }
+  }
+}
+
+.dropdown {
+  width: 100%;
+  background-color: #00679B;
+  border-radius: 0;
+  height: 600px;
+  :global {
+    .ant-select-dropdown-menu-item {
+      color: #fff;
+      font-size: 32px;
+      line-height: 72px;
+      padding: 0 12px;
+      &:hover,
+      &:active {
+        background-color: rgba(70, 121, 230, 0.7);
+        color: #fff;
+        font-weight: normal;
+      }
+    }
+    .ant-select-dropdown-menu{
+      max-height: 600px;
+    }
+    .ant-select-dropdown-menu-item-active:not(.ant-select-dropdown-menu-item-disabled) {
+      background-color: rgba(70, 121, 230, 0.7);
+      color: #fff;
+      font-weight: normal;
+    }
+  }
+}
+
+.inputCss{
+  width: 400px;
+  // margin-left: 80px;
+  background-color: #033A70;
+  border-radius: 50px;
+  margin-top: 62px;
+}
+
+.riqikuang{
+  height: 100%;
+  width: 570px;
+  background-size: 100% 100%;
+  float: left;
+  margin-top: 62px;
+  margin-left: 70px;
+  :global{
+    .ant-calendar-picker{
+      width: 100% !important;
+      background-color: #033A70;
+      border-radius: 50px;
+    }
+    .ant-input{
+      height: 88px !important;
+      background-color: #fff0;
+      border: 1px solid #ccc0;
+      font-size: 32px;
+      color: #fff;
+      padding-left: 25px;
+    }
+    .ant-calendar-picker-icon{
+      display: none;
+    }
+    .ant-calendar-picker-clear{
+      display: none;
+      top: 40%;
+      right: 50px;
+      width: 40px;
+      height: 40px;
+      background: #ccc0;
+      font-size: 32px !important;
+    }
+    .ant-calendar-range-picker-separator{
+      margin-top: 15px;
+      color: #78B4F8;
+    }
+  }
+}
+
+.date_picker {
+  * {
+    font-size: 38px;
+  }
+
+  :global {
+    .ant-calendar {
+      width: 1000px;
+    }
+    .ant-calendar-month .ant-calendar-month-header-wrap {
+      width: 500px;
+      height: 500px;
+    }
+
+    .ant-calendar-month-panel-header {
+      height: 80px;
+      line-height: 80px;
+    }
+    .ant-calendar-year-panel-next-decade-btn,
+    .ant-calendar-year-panel-prev-decade-btn,
+    .ant-calendar-next-year-btn,
+    .ant-calendar-next-month-btn,
+    .ant-calendar-prev-month-btn,
+    .ant-calendar-prev-year-btn,
+    .ant-calendar-month-panel-next-year-btn,
+    .ant-calendar-month-panel-prev-year-btn {
+      line-height: 80px !important;
+    }
+    .ant-calendar-prev-month-btn {
+      left: 40px !important;
+    }
+    .ant-calendar-next-month-btn {
+      right: 40px !important;
+    }
+    .ant-calendar-year-panel-next-decade-btn::after,
+    .ant-calendar-year-panel-prev-decade-btn::after,
+    .ant-calendar-next-year-btn::after,
+    .ant-calendar-next-month-btn::after,
+    .ant-calendar-prev-month-btn::after,
+    .ant-calendar-prev-year-btn::after,
+    .ant-calendar-month-panel-next-year-btn::after,
+    .ant-calendar-month-panel-prev-year-btn::after {
+      width: 16px !important;
+      height: 16px !important;
+      border-width: 3px 0 0 3px !important;
+    }
+    .ant-calendar-year-panel-next-decade-btn::before,
+    .ant-calendar-year-panel-prev-decade-btn::before,
+    .ant-calendar-next-year-btn::before,
+    .ant-calendar-next-month-btn::before,
+    .ant-calendar-prev-month-btn::before,
+    .ant-calendar-prev-year-btn::before,
+    .ant-calendar-month-panel-next-year-btn::before,
+    .ant-calendar-month-panel-prev-year-btn::before {
+      width: 16px !important;
+      height: 16px !important;
+      border-width: 3px 0 0 3px !important;
+    }
+    .ant-calendar-month-panel-month {
+      height: 80px;
+      line-height: 80px;
+    }
+    .ant-calendar-time, .ant-calendar-panel, .ant-calendar-month-calendar-content {
+      .ant-calendar-input-wrap {
+        height: 80px;
+        line-height: 40px;
+        .ant-calendar-input {
+          height: auto;
+        }
+      }
+      .ant-calendar-date-panel {
+        .ant-calendar-input  {
+          font-size: 36px;
+        }
+        .ant-calendar-range-middle {
+          line-height: 60px;
+        }
+        .ant-calendar-time-picker-combobox {
+          li {
+            font-size: 36px;
+            height: 40px;
+            line-height: 40px;
+          }
+        }
+      }
+      .ant-calendar-footer-btn {
+        padding: 10px;
+        .ant-calendar-time-picker-btn {
+          font-size: 36px;
+        }
+        .ant-calendar-ok-btn {
+          height: 50px;
+          width: 100px;
+          font-size: 32px;
+          line-height: 50px;
+        }
+      } 
+
+
+      .ant-calendar-header {
+        height: 80px;
+        line-height: 80px;
+      }
+      .ant-calendar-year-panel {
+        .ant-calendar-year-panel-header {
+          height: 80px;
+          line-height: 80px;
+        }
+        .ant-calendar-year-panel-year {
+          height: 80px;
+          line-height: 80px;
+        }
+      }
+      .ant-calendar-body {
+        .ant-calendar-column-header {
+          line-height: 80px;
+        }
+        .ant-calendar-cell {
+          line-height: 48px;
+          .ant-calendar-date {
+            font-size: 36px;
+            width: auto;
+            height: 60px;
+            line-height: 48px;
+          }
+        }
+      }
+      .ant-calendar-decade-panel {
+        .ant-calendar-decade-panel-decade {
+          font-size: 32px;
+          height: 80px;
+          line-height: 80px;
+        }
+      }
+      .ant-calendar-footer {
+        line-height: 60px;
+      }
+    }
+  }
+}
+
+.btnCss{
+  height: 75px;
+  width: 160px;
+  border-radius: 30px;
+  font-size: 32px;
+  color: #fff;
+  background-color: #033A70;
+}
+
+// 列表
+.rubbishTable3 {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  :global(.ant-table-thead > tr > th) {
+      font-size: 36px;
+      color: #5F82BC;
+      text-align: center;
+      background-color: #1c447000;
+      // background-color: transparent !important;
+      // background-image: linear-gradient(to bottom, rgba(37, 201, 246, 0.3), rgba(16, 153, 233, 0.3)) !important;
+  }
+  :global(.ant-table-wrapper){
+      height: 100%;
+  }
+  :global(.ant-spin-nested-loading){
+      height: 100%;
+  }
+  :global(.ant-spin-container) {
+      height: 100%;
+  }
+  :global(.ant-pagination) {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      float: none;
+      text-align: center;
+      color: #799FDF;
+
+  }
+  :global(.ant-pagination-item) {
+      width: 46px;
+      height: 46px;
+      line-height: 46px;
+      border: none;
+      background-color: transparent;
+  }
+  :global(.ant-pagination-item a){
+      color: rgba(55, 183, 246, .5);
+      font-size: 32px;
+  }
+  :global(.ant-pagination-item.ant-pagination-item-active a) {
+      background-color: #37B7F6;
+      color: #fff;
+      border-radius: 50%;
+  }
+  :global(.ant-pagination-item.ant-pagination-item-active) {
+      background-color: transparent;
+  }
+  :global(.ant-pagination-item-link) {
+      border: none !important;
+      color: rgba(55, 183, 246, .5) !important;
+      font-size: 32px !important;
+      background-color: transparent !important;
+  }
+  :global(.ant-table-tbody > tr:hover > td) {
+      background: transparent !important;
+  }
+  :global(.ant-table-placeholder) {
+      display: none;
+  }
+  :global(.ant-table-tbody > tr > td) {
+      overflow:hidden;
+      // text-overflow:ellipsis;
+      white-space: normal;
+      border-bottom:2px #005FB9 solid;
+      padding: 10px 10px !important;
+  }
+  :global(.ant-table-thead > tr > th) {
+      border-bottom: 1px rgba(14, 42, 86, 0.5) solid;
+      background: #014F89;
+      color: #fff;
+      border-right: 2px rgba(14, 42, 86, 0.5) solid;
+      padding: 11px 11px !important;
+      height: 88px;
+  }
+
+}
+.rowClassName {
+  color: #FFFFFF;
+  font-size: 36px;
+  text-align: center;
+}
+
+.ant_tooltip {
+  :global {
+    .ant-tooltip-inner {
+      font-size: 48px;
+      width: 500px;
+    }
+  }
+}

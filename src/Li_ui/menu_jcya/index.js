@@ -179,11 +179,12 @@ export function menuArr(arr, that) {
         //找出了所有的一级属性
         for (let i = 0; i < topItems.length; i++) {
             topItems[i].index = index;
-            getItems(topItems[i]);
+            getItems(topItems[i],1);
             index = 0;
         }
-        // console.log(topItems);
+
         setOneChild(topItems);
+
         return topItems;
 
     }
@@ -215,7 +216,7 @@ export function menuArr(arr, that) {
     }
 
 
-    function getItems(node) {
+    function getItems(node,num) {
 
         let children = array.filter(item => item.fid === node.id);
 
@@ -224,12 +225,14 @@ export function menuArr(arr, that) {
             node.hot ? node.hot = node.hot : node.hot = false;
             // node.isColor=false;
             node.childrens = [];
-            index++;
+
             children.forEach((item) => {
-                item.index = index;
-                getItems(item);
+
+                item.index = num;
+                getItems(item,num+1);
                 node.childrens.push(item);
             })
+
         }
 
     };

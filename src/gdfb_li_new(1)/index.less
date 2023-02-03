@@ -1,0 +1,102 @@
+.box {
+  width: 978px;
+  height: 480px;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: FZCCHK--GBK1-0, FZCCHK--GBK1;
+  font-weight: 600;
+
+  :global {
+    .container{
+
+    }
+    .box-item {
+      background: url(./img/banner.png) no-repeat center center/100% 100%;
+      width: 310px!important;
+      height: 148px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 18px;
+      cursor: pointer;
+      .names {
+        height: 33px;
+        flex-shrink: 0;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding:0 8px 0 12px;
+        .name {
+          font-weight: 600;
+          color: #FFFFFF;
+          line-height: 28px;
+          font-size: 20px;
+        }
+        .countTitle{
+          font-size:16px;
+          color:#A1D5FF;
+          line-height: 22px;
+          text-shadow: 0px 0px 20px rgba(0, 17, 67, 0.8);
+          .count{
+            font-size:18px;
+            font-style: normal;
+          }
+        }
+      }
+
+      .box-content {
+        flex-grow: 1;
+        display:flex;
+        .echarts-box{
+          width:84px;
+          flex-shrink: 0;
+          margin-right:19px;
+        }
+        .yc-box{
+          flex-grow: 1;
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          .yc-p{
+            width:100%;
+            font-size:18px;
+            color:#fff;
+            height:50%;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding-left: 40px;
+            margin: 0;
+
+            i{
+              background:url(./img/ycl.png) no-repeat 0 center;
+              font-style: normal;
+              padding-left:35px;
+              &.wcl-i{
+                background:url(./img/wcl.png) no-repeat 0 center;
+              }
+            }
+            span{
+              width:60px;
+              margin-left:13px;
+              color:#3BFEB2;
+              font-size:24px;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+            }
+            &.wc{
+              margin-top:-6px;
+            }
+            &.wc span{
+              color:#76B8FF;
+            }
+          }
+        }
+      }
+    }
+  }
+}
